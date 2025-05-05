@@ -1,3 +1,5 @@
+![hero](/public/images/og.png)
+
 # PaceUI
 
 A growing collection of animated components built with GSAP, ready to use in any React or Next.js project. You can copy them, paste them, and make them your own.

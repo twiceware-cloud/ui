@@ -53,6 +53,12 @@ export const metadata: Metadata = {
             "Bring your UI to life with GSAP-powered components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
         url: "https://paceui.com",
         siteName: "PaceUI",
+        images: [
+            {
+                url: "https://paceui.com/images/og.png",
+                alt: "PaceUI",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
