@@ -10,10 +10,10 @@ import "@/styles/app.css";
 export const metadata: Metadata = {
     title: {
         template: "%s | PaceUI",
-        default: "PaceUI – GSAP Animated Tailwind CSS Components for the React Ecosystem",
+        default: "PaceUI – GSAP Animated Components for the React Ecosystem",
     },
     description:
-        "Bring your UI to life with GSAP-powered Tailwind components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
+        "Bring your UI to life with GSAP-powered components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
 
     keywords: [
         "tailwind",
@@ -48,17 +48,17 @@ export const metadata: Metadata = {
         ],
     },
     openGraph: {
-        title: "PaceUI – GSAP Animated Tailwind CSS Components for the React Ecosystem",
+        title: "PaceUI – GSAP Animated Components for the React Ecosystem",
         description:
-            "Bring your UI to life with GSAP-powered Tailwind components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
+            "Bring your UI to life with GSAP-powered components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
         url: "https://paceui.com",
         siteName: "PaceUI",
     },
     twitter: {
         card: "summary_large_image",
-        title: "PaceUI – GSAP Animated Tailwind CSS Components for the React Ecosystem",
+        title: "PaceUI – GSAP Animated Components for the React Ecosystem",
         description:
-            "Bring your UI to life with GSAP-powered Tailwind components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
+            "Bring your UI to life with GSAP-powered components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
     },
     alternates: {
         canonical: "https://paceui.com",
