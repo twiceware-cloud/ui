@@ -1,0 +1,76 @@
+---
+slug: components-text-reveal
+title: Text Reveal
+description: A smooth text reveal animation where each heading reveals related content on interaction.
+links:
+    api: https://gsap.com/docs/v3/Plugins/SplitText
+---
+
+<DemoCodePreview
+    path="demo/components/text-reveal/default.tsx"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli" className="mt-3">
+    <TabsList>
+        <TabsTrigger value="cli">CLI</TabsTrigger>
+        <TabsTrigger value="manual">Manual</TabsTrigger>
+    </TabsList>
+    <TabsContent value="cli" className="mt-4">
+        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/text-reveal"`}/>
+    </TabsContent>
+    <TabsContent value="manual" className="mt-4">
+        <Steps>
+            <Step>
+                Install the following dependencies
+            </Step>
+            <InstallationCommand command="npm install gsap @gsap/react"/>
+            <Step>
+                Copy and paste the following code into your project
+            </Step>
+            <CodePreview path='components/gsap/text-reveal.tsx' collapsible></CodePreview>
+
+            <Step>
+                Update the import paths to fit your project setup
+            </Step>
+        </Steps>
+    </TabsContent>
+</Tabs>
+
+
+## Examples
+
+### Word by word
+
+Set `type` to `words`, the text will be split by individual words.
+
+<DemoCodePreview
+    path="demo/components/text-reveal/words.tsx"
+/>
+
+### Line by line
+
+Set `type` to `lines`, the text will be split by individual lines.
+
+<DemoCodePreview
+    path="demo/components/text-reveal/lines.tsx"
+/>
+
+### Assemble
+
+Set `gsapVars` with the code, and the text will appear as if it's coming from broken pieces.
+
+<DemoCodePreview
+    path="demo/components/text-reveal/assemble.tsx"
+/>
+
+## Props
+
+### TextReveal
+
+| Prop     | Type                    | Default |
+|----------|-------------------------|---------|
+| type     | `chars` `words` `lines` | chars   |
+| gsapVars | gsap.TweenVars          | {}      |
+| children | ReactNode               | -       |

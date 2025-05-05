@@ -1,0 +1,4 @@
+@import "./tailwind.css";
+@import "./docs.css";
+
+@plugin "tailwindcss-animate";

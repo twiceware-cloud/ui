@@ -1,0 +1,13 @@
+{
+    "name": "text-scrambler",
+    "type": "registry:ui",
+    "dependencies": ["gsap", "@gsap/react"],
+    "files": [
+        {
+            "path": "gsap/text-scrambler.tsx",
+            "type": "registry:ui",
+            "target": "~/components/gsap/text-scrambler.tsx",
+            "content": "'use client'\n\nimport { useGSAP } from \"@gsap/react\";\nimport gsap from \"gsap\";\nimport { ScrambleTextPlugin } from \"gsap/ScrambleTextPlugin\";\nimport { ReactNode, useEffect, useRef } from \"react\";\n\ngsap.registerPlugin(ScrambleTextPlugin);\n\ntype TextScramblerProps = {\n    random?: boolean;\n    className?: string;\n    children: ReactNode;\n    scrambleOnLoad?: boolean;\n};\n\nconst defaultChars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\n\nexport const TextScrambler = ({ children, scrambleOnLoad = true, random = true, className }: TextScramblerProps) => {\n    const containerRef = useRef<HTMLDivElement | null>(null);\n    const textRef = useRef<HTMLDivElement | null>(null);\n\n    const { contextSafe } = useGSAP();\n\n    const scramble = contextSafe(() => {\n        const target = textRef.current!;\n        if (gsap.isTweening(target)) return;\n        gsap.to(target, {\n            duration: 1,\n            ease: \"sine.in\",\n            scrambleText: {\n                text: target.innerText,\n                speed: 2,\n                chars: random ? defaultChars : target.innerText.replace(/\\s/g, \"\"),\n            },\n        });\n    });\n\n    useEffect(() => {\n        if (scrambleOnLoad) scramble();\n        const target = textRef.current;\n        target?.addEventListener(\"pointerenter\", scramble);\n        return () => target?.removeEventListener(\"pointerenter\", scramble);\n    }, [textRef, scramble, scrambleOnLoad]);\n\n    return (\n        <div ref={containerRef} className={className}>\n            <div ref={textRef}>{children}</div>\n        </div>\n    );\n};\n"
+        }
+    ]
+}
