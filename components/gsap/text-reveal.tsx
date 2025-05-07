@@ -40,21 +40,21 @@ const defaultGsapVars: Record<NonNullable<TextRevealProps["type"]>, gsap.TweenVa
 };
 
 export const TextReveal = ({ children, type = "chars", className, gsapVars = {} }: TextRevealProps) => {
-    const textRef = useRef<HTMLDivElement | null>(null);
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     useGSAP(
         () => {
-            const split = SplitText.create(textRef.current, { type: type });
+            const split = SplitText.create(wrapperRef.current, { type: type });
             gsap.from(split[type], {
                 ...defaultGsapVars[type],
                 ...gsapVars,
             });
         },
-        { scope: textRef },
+        { scope: wrapperRef },
     );
 
     return (
-        <div ref={textRef} className={className}>
+        <div ref={wrapperRef} className={className}>
             {children}
         </div>
     );

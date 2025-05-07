@@ -18,12 +18,12 @@ type TextScramblerProps = {
 const defaultChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 export const TextScrambler = ({ children, scrambleOnLoad = true, random = true, className }: TextScramblerProps) => {
-    const textRef = useRef<HTMLDivElement | null>(null);
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     const { contextSafe } = useGSAP();
 
     const scramble = contextSafe(() => {
-        const target = textRef.current;
+        const target = wrapperRef.current;
         if (gsap.isTweening(target) || !target) return;
         gsap.to(target, {
             duration: 1,
@@ -38,13 +38,13 @@ export const TextScrambler = ({ children, scrambleOnLoad = true, random = true, 
 
     useEffect(() => {
         if (scrambleOnLoad) scramble();
-        const target = textRef.current;
+        const target = wrapperRef.current;
         target?.addEventListener("pointerenter", scramble);
         return () => target?.removeEventListener("pointerenter", scramble);
-    }, [textRef, scramble, scrambleOnLoad]);
+    }, [wrapperRef, scramble, scrambleOnLoad]);
 
     return (
-        <div ref={textRef} className={className}>
+        <div ref={wrapperRef} className={className}>
             {children}
         </div>
     );

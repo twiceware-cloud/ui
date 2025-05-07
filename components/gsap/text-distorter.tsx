@@ -16,11 +16,11 @@ type TextDistorterProps = {
 };
 
 export const TextDistorter = ({ children, customChar = ".:", className }: TextDistorterProps) => {
-    const textRef = useRef<HTMLDivElement | null>(null);
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     useGSAP(
         () => {
-            const textBlock = textRef.current!;
+            const textBlock = wrapperRef.current!;
 
             const st = SplitText.create(textBlock, { type: "chars", charsClass: "char" });
 
@@ -52,11 +52,11 @@ export const TextDistorter = ({ children, customChar = ".:", className }: TextDi
                 });
             };
         },
-        { scope: textRef },
+        { scope: wrapperRef },
     );
 
     return (
-        <div ref={textRef} className={className}>
+        <div ref={wrapperRef} className={className}>
             {children}
         </div>
     );
