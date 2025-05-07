@@ -17,9 +17,9 @@ export default function LandingPage() {
                 <div className="flex flex-col items-center justify-center">
                     <div className="max-w-[600px] text-center">
                         <div>
-                            <Link href={routes.externalLinks.github} target="_blank">
+                            <Link href="/docs/components/scroll-reveal/">
                                 <Badge variant="outline" color="success" className="font-medium">
-                                    GSAP React Components
+                                    New: Scroll Reveal
                                 </Badge>
                             </Link>
 

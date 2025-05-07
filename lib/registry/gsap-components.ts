@@ -37,4 +37,16 @@ export const gsapComponentRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "scroll-reveal",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/scroll-reveal.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/scroll-reveal.tsx",
+            },
+        ],
+    },
 ];

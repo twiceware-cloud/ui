@@ -1,0 +1,57 @@
+---
+slug: components-scroll-reveal
+title: Scroll Reveal
+description: Animate content into view on scroll with effects like fade, slide, zoom, and blur.
+links:
+    api: https://gsap.com/docs/v3/Plugins/ScrollTrigger
+---
+
+<DemoCodePreview
+    path="demo/components/scroll-reveal/default.tsx"
+    props={[
+        {
+            title: "Type",
+            name: "type",
+            type: "select",
+            defaultValue: "fade-in",
+            values: ["fade-in", "slide-in-right", "zoom-in", "blur-in"],
+        },
+    ]}
+/>
+
+## Installation
+
+<Tabs defaultValue="cli" className="mt-3">
+    <TabsList>
+        <TabsTrigger value="cli">CLI</TabsTrigger>
+        <TabsTrigger value="manual">Manual</TabsTrigger>
+    </TabsList>
+    <TabsContent value="cli" className="mt-4">
+        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/scroll-reveal"`} />
+    </TabsContent>
+    <TabsContent value="manual" className="mt-4">
+        <Steps>
+            <Step>
+                Install the following dependencies
+            </Step>
+            <InstallationCommand command="npm install gsap @gsap/react" />
+            <Step>
+                Copy and paste the following code into your project
+            </Step>
+            <CodePreview path='components/gsap/scroll-reveal.tsx' collapsible></CodePreview>
+
+            <Step>
+                Update the import paths to fit your project setup
+            </Step>
+        </Steps>
+    </TabsContent>
+</Tabs>
+
+## Props
+
+### ScrollReveal
+
+| Prop     | Type                                                    | Default   |
+|----------|---------------------------------------------------------|-----------|
+| type     | `fade-in` \| `slide-in-right` \| `zoom-in` \| `blur-in` | `fade-in` |
+| children | ReactNode                                               | -         |

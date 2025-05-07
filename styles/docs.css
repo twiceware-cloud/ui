@@ -39,6 +39,17 @@
     content: counter(step);
 }
 
+.custom-scroll-sm {
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        @apply bg-foreground/10;
+    }
+}
+
 .shiki {
     @apply !overflow-auto !px-0;
 
