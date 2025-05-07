@@ -10,6 +10,7 @@ type TextRevealProps = {
     type?: "chars" | "words" | "lines";
     className?: string;
     gsapVars?: gsap.TweenVars;
+    splitTextVars?: Partial<SplitText.Vars>;
     children: ReactNode;
 };
 
@@ -39,12 +40,18 @@ const defaultGsapVars: Record<NonNullable<TextRevealProps["type"]>, gsap.TweenVa
     },
 };
 
-export const TextReveal = ({ children, type = "chars", className, gsapVars = {} }: TextRevealProps) => {
+export const TextReveal = ({
+    children,
+    type = "chars",
+    className,
+    gsapVars = {},
+    splitTextVars = {},
+}: TextRevealProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     useGSAP(
         () => {
-            const split = SplitText.create(wrapperRef.current, { type: type });
+            const split = SplitText.create(wrapperRef.current, { type: type, ...splitTextVars });
             gsap.from(split[type], {
                 ...defaultGsapVars[type],
                 ...gsapVars,
