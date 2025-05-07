@@ -61,7 +61,7 @@ export const DemoPreview = ({ path, component, props = [] }: IDemoPreview) => {
 
     return (
         <div className={cn("relative mt-3 flex gap-3 overflow-hidden rounded border")}>
-            <div className="bg-[url('/images/docs/dots-bg.png')] bg-repeat inset-0 bg-[length:800px_300px] absolute opacity-5" />
+            <div className="absolute inset-0 bg-[url('/images/docs/dots-bg.png')] bg-[length:800px_300px] bg-repeat opacity-5" />
             <div
                 className={cn(
                     "relative flex min-h-80 grow items-center justify-center px-8 py-8 lg:py-16 [&>.w-full]:lg:w-[90%] [&>.w-full]:2xl:w-[70%]",
