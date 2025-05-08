@@ -6,15 +6,17 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 
+type SplitType = "chars" | "words" | "lines";
+
 type TextRevealProps = {
-    type?: "chars" | "words" | "lines";
+    type?: SplitType;
     className?: string;
     gsapVars?: gsap.TweenVars;
     splitTextVars?: Partial<SplitText.Vars>;
     children: ReactNode;
 };
 
-const defaultGsapVars: Record<NonNullable<TextRevealProps["type"]>, gsap.TweenVars> = {
+const defaultGsapVars: Record<SplitType, gsap.TweenVars> = {
     chars: {
         x: 150,
         opacity: 0,
@@ -51,8 +53,8 @@ export const TextReveal = ({
 
     useGSAP(
         () => {
-            const split = SplitText.create(wrapperRef.current, { type: type, ...splitTextVars });
-            gsap.from(split[type], {
+            const splitText = SplitText.create(wrapperRef.current, { type, ...splitTextVars });
+            gsap.from(splitText[type], {
                 ...defaultGsapVars[type],
                 ...gsapVars,
             });
