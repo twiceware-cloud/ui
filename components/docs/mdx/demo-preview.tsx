@@ -57,6 +57,12 @@ export const DemoPreview = ({ path, component, props = [] }: IDemoPreview) => {
         setKey(key + 1);
     };
 
+    function formatCamelCase(text: string): string {
+        return text
+            .replace(/([a-z])([A-Z])/g, "$1 $2") // Add space before capital letters
+            .replace(/^./, (char) => char.toUpperCase()); // Capitalize the first letter
+    }
+
     if (!Demo) return <p>Demo is not available</p>;
 
     return (
@@ -100,7 +106,7 @@ export const DemoPreview = ({ path, component, props = [] }: IDemoPreview) => {
                                                                     value={val}
                                                                     key={val}
                                                                     className="capitalize">
-                                                                    {val}
+                                                                    {formatCamelCase(val)}
                                                                 </SelectItem>
                                                             ))}
                                                         </SelectContent>
