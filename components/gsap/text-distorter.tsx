@@ -10,26 +10,26 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(ScrambleTextPlugin);
 
 type TextDistorterProps = {
-    customChar?: string;
+    scrambleChars?: string;
     className?: string;
     children: ReactNode;
 };
 
-export const TextDistorter = ({ children, customChar = ".:", className }: TextDistorterProps) => {
+export const TextDistorter = ({ children, scrambleChars = ".:", className }: TextDistorterProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     useGSAP(
         () => {
-            const textBlock = wrapperRef.current!;
+            const element = wrapperRef.current!;
 
-            const st = SplitText.create(textBlock, { type: "chars", charsClass: "char" });
+            const splitText = SplitText.create(element, { type: "chars", charsClass: "char" });
 
-            st.chars.forEach((char) => {
+            splitText.chars.forEach((char) => {
                 gsap.set(char, { attr: { "data-content": char.innerHTML } });
             });
 
-            textBlock.onpointermove = (e) => {
-                st.chars.forEach((char) => {
+            element.onpointermove = (e) => {
+                splitText.chars.forEach((char) => {
                     const rect = char.getBoundingClientRect();
                     const cx = rect.left + rect.width / 2;
                     const cy = rect.top + rect.height / 2;
@@ -43,7 +43,7 @@ export const TextDistorter = ({ children, customChar = ".:", className }: TextDi
                             scrambleText: {
                                 // @ts-ignore
                                 text: char.dataset.content,
-                                chars: customChar,
+                                chars: scrambleChars,
                                 speed: 0.5,
                             },
                             ease: "bounce",
