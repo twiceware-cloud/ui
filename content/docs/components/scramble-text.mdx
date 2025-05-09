@@ -1,13 +1,13 @@
 ---
-slug: components-text-scrambler
-title: Text Scrambler
+slug: components-scramble-text
+title: Scramble Text
 description: A hover-triggered text effect that scrambles and restores characters with smooth motion.
 links:
     api: https://gsap.com/docs/v3/Plugins/ScrambleTextPlugin
 ---
 
 <DemoCodePreview
-    path="demo/components/text-scrambler/default.tsx"
+    path="demo/components/scramble-text/default.tsx"
 />
 
 ## Installation
@@ -18,7 +18,7 @@ links:
         <TabsTrigger value="manual">Manual</TabsTrigger>
     </TabsList>
     <TabsContent value="cli" className="mt-4">
-        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/text-scrambler"`} />
+        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/scramble-text"`} />
     </TabsContent>
     <TabsContent value="manual" className="mt-4">
         <Steps>
@@ -29,7 +29,7 @@ links:
             <Step>
                 Copy and paste the following code into your project
             </Step>
-            <CodePreview path='components/gsap/text-scrambler.tsx' collapsible></CodePreview>
+            <CodePreview path='components/gsap/scramble-text.tsx' collapsible></CodePreview>
 
             <Step>
                 Update the import paths to fit your project setup
@@ -41,10 +41,11 @@ links:
 
 ## Props
 
-### TextScrambler
+### ScrambleText
 
 | Prop           | Type      | Default |
 |----------------|-----------|---------|
 | random         | boolean   | true    |
 | scrambleOnLoad | boolean   | true    |
+| className      | string    | -       |
 | children       | ReactNode | -       |

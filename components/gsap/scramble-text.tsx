@@ -8,7 +8,7 @@ import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
-type TextScramblerProps = {
+type ScrambleTextProps = {
     random?: boolean;
     className?: string;
     children: ReactNode;
@@ -17,7 +17,7 @@ type TextScramblerProps = {
 
 const defaultChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-export const TextScrambler = ({ children, scrambleOnLoad = true, random = true, className }: TextScramblerProps) => {
+export const ScrambleText = ({ children, scrambleOnLoad = true, random = true, className }: ScrambleTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     const { contextSafe } = useGSAP();

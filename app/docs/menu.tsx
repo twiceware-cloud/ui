@@ -51,8 +51,8 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/text-reveal",
             },
             {
-                title: "Text Scrambler",
-                link: components + "/text-scrambler",
+                title: "Scramble Text",
+                link: components + "/scramble-text",
             },
             {
                 title: "Distort Text",

@@ -26,14 +26,14 @@ export const gsapComponentRegistries: RegistryItem[] = [
         ],
     },
     {
-        name: "text-scrambler",
+        name: "scramble-text",
         type: "registry:ui",
         dependencies: ["gsap", "@gsap/react"],
         files: [
             {
-                path: "gsap/text-scrambler.tsx",
+                path: "gsap/scramble-text.tsx",
                 type: "registry:ui",
-                target: "~/components/gsap/text-scrambler.tsx",
+                target: "~/components/gsap/scramble-text.tsx",
             },
         ],
     },
