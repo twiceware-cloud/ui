@@ -61,4 +61,16 @@ export const gsapComponentRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "mouse-wave-text",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/mouse-wave-text.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/mouse-wave-text.tsx",
+            },
+        ],
+    },
 ];

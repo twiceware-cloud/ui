@@ -67,6 +67,11 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/bouncing-text",
                 new: true,
             },
+            {
+                title: "Mouse Wave Text",
+                link: components + "/mouse-wave-text",
+                new: true,
+            },
         ],
     },
     {

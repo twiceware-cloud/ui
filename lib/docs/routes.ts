@@ -5,7 +5,7 @@ export const routes = {
         installation: "/docs/installation",
         theme: "/docs/theme",
         components: {
-            home: "/docs/components/text-reveal",
+            home: "/docs/components/bouncing-text",
             base: "/docs/components",
         },
     },

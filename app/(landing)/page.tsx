@@ -17,9 +17,9 @@ export default function LandingPage() {
                 <div className="flex flex-col items-center justify-center">
                     <div className="max-w-[600px] text-center">
                         <div>
-                            <Link href="/docs/components/scroll-reveal/">
+                            <Link href="/docs/components/bouncing-text/">
                                 <Badge variant="outline" color="success" className="font-medium">
-                                    New: Scroll Reveal
+                                    New: Bouncing Text
                                 </Badge>
                             </Link>
 

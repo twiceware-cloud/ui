@@ -1,0 +1,61 @@
+---
+slug: components-mouse-wave-text
+title: Mouse Wave Text
+description: Creates a wave-like bounce effect on text as the mouse moves across
+---
+
+<DemoCodePreview
+    path="demo/components/mouse-wave-text/default.tsx"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli" className="mt-3">
+    <TabsList>
+        <TabsTrigger value="cli">CLI</TabsTrigger>
+        <TabsTrigger value="manual">Manual</TabsTrigger>
+    </TabsList>
+    <TabsContent value="cli" className="mt-4">
+        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/mouse-wave-text"`} />
+    </TabsContent>
+    <TabsContent value="manual" className="mt-4">
+        <Steps>
+            <Step>
+                Install the following dependencies
+            </Step>
+            <InstallationCommand command="npm install gsap @gsap/react" />
+            <Step>
+                Copy and paste the following code into your project
+            </Step>
+            <CodePreview path='components/gsap/mouse-wave-text.tsx' collapsible></CodePreview>
+
+            <Step>
+                Update the import paths to fit your project setup
+            </Step>
+        </Steps>
+    </TabsContent>
+</Tabs>
+
+## Examples
+
+### Skew
+
+Set `wrapperTweenVars` with the code to skew the entire text
+
+<DemoCodePreview
+    path="demo/components/mouse-wave-text/skew.tsx"
+/>
+
+## Props
+
+### MouseWaveText
+
+| Prop             | Type           | Default |
+|------------------|----------------|---------|
+| wrapperTweenVars | gsap.TweenVars | -       |
+| textClassName    | string         | -       |
+| shadowClassName  | string         | -       |
+| className        | string         | -       |
+| children         | ReactNode      | -       |
+
+<span className="text-muted-foreground">Inspired by Tom Miller's work</span>
