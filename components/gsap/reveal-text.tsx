@@ -8,7 +8,7 @@ import { SplitText } from "gsap/SplitText";
 
 type SplitType = "chars" | "words" | "lines";
 
-type TextRevealProps = {
+type RevealTextProps = {
     type?: SplitType;
     className?: string;
     gsapVars?: gsap.TweenVars;
@@ -42,18 +42,21 @@ const defaultGsapVars: Record<SplitType, gsap.TweenVars> = {
     },
 };
 
-export const TextReveal = ({
+export const RevealText = ({
     children,
     type = "chars",
     className,
     gsapVars = {},
     splitTextVars = {},
-}: TextRevealProps) => {
+}: RevealTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     useGSAP(
         () => {
-            const splitText = SplitText.create(wrapperRef.current, { type, ...splitTextVars });
+            const element = wrapperRef.current;
+            if (!element) return;
+
+            const splitText = SplitText.create(element, { type, ...splitTextVars });
             gsap.from(splitText[type], {
                 ...defaultGsapVars[type],
                 ...gsapVars,

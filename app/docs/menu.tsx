@@ -47,8 +47,8 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
         expanded: true,
         items: [
             {
-                title: "Text Reveal",
-                link: components + "/text-reveal",
+                title: "Reveal Text",
+                link: components + "/reveal-text",
             },
             {
                 title: "Scramble Text",

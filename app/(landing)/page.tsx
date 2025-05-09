@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Topbar } from "@/components/docs/layouts";
 import { Logo } from "@/components/docs/logo";
 import { Newsletter } from "@/components/docs/newsletter";
-import { TextReveal } from "@/components/gsap/text-reveal";
+import { RevealText } from "@/components/gsap/reveal-text";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/docs";
@@ -25,17 +25,17 @@ export default function LandingPage() {
 
                             <div className="flex items-center justify-center gap-4">
                                 <Logo className="size-16" />
-                                <TextReveal type="chars" gsapVars={{ duration: 1, stagger: 0.2 }}>
+                                <RevealText type="chars" gsapVars={{ duration: 1, stagger: 0.2 }}>
                                     <p className="text-3xl font-semibold sm:text-7xl">PaceUI</p>
-                                </TextReveal>
+                                </RevealText>
                             </div>
                         </div>
-                        <TextReveal type="words" gsapVars={{ stagger: 0.08 }}>
+                        <RevealText type="words" gsapVars={{ stagger: 0.08 }}>
                             <p className="text-foreground/80 mt-4 sm:text-xl">
                                 A <span className="font-semibold">GSAP</span> component for dynamic animations, ready to
                                 use in your React & Next.js projects.
                             </p>
-                        </TextReveal>
+                        </RevealText>
                         <div className="mt-8 flex justify-center gap-6 max-sm:flex-col">
                             <Button size="lg" asChild>
                                 <Link href={routes.docs.home}>

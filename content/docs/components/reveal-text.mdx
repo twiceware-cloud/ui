@@ -1,13 +1,13 @@
 ---
-slug: components-text-reveal
-title: Text Reveal
+slug: components-reveal-text
+title: Reveal Text
 description: A smooth text reveal animation where each heading reveals related content on interaction.
 links:
     api: https://gsap.com/docs/v3/Plugins/SplitText
 ---
 
 <DemoCodePreview
-    path="demo/components/text-reveal/default.tsx"
+    path="demo/components/reveal-text/default.tsx"
 />
 
 ## Installation
@@ -18,7 +18,7 @@ links:
         <TabsTrigger value="manual">Manual</TabsTrigger>
     </TabsList>
     <TabsContent value="cli" className="mt-4">
-        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/text-reveal"`}/>
+        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/reveal-text"`}/>
     </TabsContent>
     <TabsContent value="manual" className="mt-4">
         <Steps>
@@ -29,7 +29,7 @@ links:
             <Step>
                 Copy and paste the following code into your project
             </Step>
-            <CodePreview path='components/gsap/text-reveal.tsx' collapsible></CodePreview>
+            <CodePreview path='components/gsap/reveal-text.tsx' collapsible></CodePreview>
 
             <Step>
                 Update the import paths to fit your project setup
@@ -46,7 +46,7 @@ links:
 Set `type` to `words`, the text will be split by individual words.
 
 <DemoCodePreview
-    path="demo/components/text-reveal/words.tsx"
+    path="demo/components/reveal-text/words.tsx"
 />
 
 ### Line by line
@@ -54,7 +54,7 @@ Set `type` to `words`, the text will be split by individual words.
 Set `type` to `lines`, the text will be split by individual lines.
 
 <DemoCodePreview
-    path="demo/components/text-reveal/lines.tsx"
+    path="demo/components/reveal-text/lines.tsx"
 />
 
 ### Masked line
@@ -62,7 +62,7 @@ Set `type` to `lines`, the text will be split by individual lines.
 Set `splitTextVars` with the code to reveal each line as if it's masked.
 
 <DemoCodePreview
-    path="demo/components/text-reveal/masked-lines.tsx"
+    path="demo/components/reveal-text/masked-lines.tsx"
 />
 
 ### Assemble
@@ -70,15 +70,17 @@ Set `splitTextVars` with the code to reveal each line as if it's masked.
 Set `gsapVars` with the code, and the text will appear as if it's coming from broken pieces.
 
 <DemoCodePreview
-    path="demo/components/text-reveal/assemble.tsx"
+    path="demo/components/reveal-text/assemble.tsx"
 />
 
 ## Props
 
-### TextReveal
+### RevealText
 
-| Prop     | Type                    | Default |
-|----------|-------------------------|---------|
-| type     | `chars` `words` `lines` | chars   |
-| gsapVars | gsap.TweenVars          | {}      |
-| children | ReactNode               | -       |
+| Prop          | Type                    | Default |
+|---------------|-------------------------|---------|
+| type          | `chars` `words` `lines` | chars   |
+| gsapVars      | gsap.TweenVars          | -       |
+| splitTextVars | SplitText.Vars          | -       |
+| className     | string                  | -       |
+| children      | ReactNode               | -       |

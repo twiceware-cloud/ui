@@ -14,14 +14,14 @@ export const gsapComponentRegistries: RegistryItem[] = [
         ],
     },
     {
-        name: "text-reveal",
+        name: "reveal-text",
         type: "registry:ui",
         dependencies: ["gsap", "@gsap/react"],
         files: [
             {
-                path: "gsap/text-reveal.tsx",
+                path: "gsap/reveal-text.tsx",
                 type: "registry:ui",
-                target: "~/components/gsap/text-reveal.tsx",
+                target: "~/components/gsap/reveal-text.tsx",
             },
         ],
     },
