@@ -59,7 +59,7 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/distort-text",
             },
             {
-                title: "Reveal On Scroll",
+                title: "Reveal on Scroll",
                 link: components + "/reveal-on-scroll",
             },
             {
@@ -75,6 +75,11 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
             {
                 title: "Squash Text",
                 link: components + "/squash-text",
+                new: true,
+            },
+            {
+                title: "Stagger on Scroll",
+                link: components + "/stagger-on-scroll",
                 new: true,
             },
         ],

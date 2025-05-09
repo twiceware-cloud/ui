@@ -85,4 +85,16 @@ export const gsapComponentRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "stagger-on-scroll",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/stagger-on-scroll.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/stagger-on-scroll.tsx",
+            },
+        ],
+    },
 ];
