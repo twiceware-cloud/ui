@@ -49,4 +49,16 @@ export const gsapComponentRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "bouncing-text",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/bouncing-text.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/bouncing-text.tsx",
+            },
+        ],
+    },
 ];
