@@ -30,7 +30,7 @@ export const CodePreview = ({ path, code, collapsible, removeExtraProps = false,
 
     const filteredCode = useMemo(() => {
         if (!removeExtraProps) return codeContent;
-        return codeContent?.replaceAll(/\{\s*\.\.\.props\s*}/g, "");
+        return codeContent?.replaceAll(/\s*\{\s*\.\.\.props\s*}\s*/g, "");
     }, [removeExtraProps, codeContent]);
 
     useEffect(() => {
