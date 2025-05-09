@@ -72,6 +72,11 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/mouse-wave-text",
                 new: true,
             },
+            {
+                title: "Squash Text",
+                link: components + "/squash-text",
+                new: true,
+            },
         ],
     },
     {

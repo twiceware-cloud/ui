@@ -73,4 +73,16 @@ export const gsapComponentRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "squash-text",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/squash-text.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/squash-text.tsx",
+            },
+        ],
+    },
 ];
