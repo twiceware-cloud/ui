@@ -38,14 +38,14 @@ export const gsapComponentRegistries: RegistryItem[] = [
         ],
     },
     {
-        name: "scroll-reveal",
+        name: "reveal-on-scroll",
         type: "registry:ui",
         dependencies: ["gsap", "@gsap/react"],
         files: [
             {
-                path: "gsap/scroll-reveal.tsx",
+                path: "gsap/reveal-on-scroll.tsx",
                 type: "registry:ui",
-                target: "~/components/gsap/scroll-reveal.tsx",
+                target: "~/components/gsap/reveal-on-scroll.tsx",
             },
         ],
     },

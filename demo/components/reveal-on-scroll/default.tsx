@@ -1,6 +1,6 @@
 import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 
-import { ScrollReveal } from "@/components/gsap/scroll-reveal";
+import { RevealOnScroll } from "@/components/gsap/reveal-on-scroll";
 
 export const Demo = ({ ...props }) => {
     return (
@@ -9,7 +9,7 @@ export const Demo = ({ ...props }) => {
                 <p>Scroll Down </p>
                 <ArrowDownIcon className="h-4" />
             </div>
-            <ScrollReveal {...props}>
+            <RevealOnScroll {...props}>
                 <div className="flex justify-center gap-8 max-sm:flex-col">
                     <img
                         src="https://images.unsplash.com/photo-1532456745301-b2c645d8b80d"
@@ -29,7 +29,7 @@ export const Demo = ({ ...props }) => {
                         <p className="mt-auto pt-3 text-sm italic">Follow us on X</p>
                     </div>
                 </div>
-            </ScrollReveal>
+            </RevealOnScroll>
             <div className="text-muted-foreground flex h-120 items-center justify-center gap-2">
                 <p>Scroll Up </p>
                 <ArrowUpIcon className="h-4" />

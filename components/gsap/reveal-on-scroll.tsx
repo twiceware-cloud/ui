@@ -10,12 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 type EffectType = "fadeIn" | "slideInRight" | "zoomIn" | "blurIn";
 
-type ScrollRevealProps = {
+type RevealOnScrollProps = {
     children: ReactNode;
     effect?: EffectType;
 };
 
-export const ScrollReveal = ({ children, effect = "fadeIn" }: ScrollRevealProps) => {
+export const RevealOnScroll = ({ children, effect = "fadeIn" }: RevealOnScrollProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const animationRef = useRef<gsap.core.Tween | null>(null);
 

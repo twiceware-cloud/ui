@@ -59,8 +59,8 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/distort-text",
             },
             {
-                title: "Scroll Reveal",
-                link: components + "/scroll-reveal",
+                title: "Reveal On Scroll",
+                link: components + "/reveal-on-scroll",
             },
             {
                 title: "Bouncing Text",
