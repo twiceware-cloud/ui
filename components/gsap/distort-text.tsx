@@ -9,18 +9,19 @@ import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
-type TextDistorterProps = {
-    scrambleChars?: string;
+type DistortTextProps = {
+    distortChar?: string;
     className?: string;
     children: ReactNode;
 };
 
-export const TextDistorter = ({ children, scrambleChars = ".:", className }: TextDistorterProps) => {
+export const DistortText = ({ children, distortChar = ".:", className }: DistortTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     useGSAP(
         () => {
-            const element = wrapperRef.current!;
+            const element = wrapperRef.current;
+            if (!element) return;
 
             const splitText = SplitText.create(element, { type: "chars", charsClass: "char" });
 
@@ -43,7 +44,7 @@ export const TextDistorter = ({ children, scrambleChars = ".:", className }: Tex
                             scrambleText: {
                                 // @ts-ignore
                                 text: char.dataset.content,
-                                chars: scrambleChars,
+                                chars: distortChar,
                                 speed: 0.5,
                             },
                             ease: "bounce",

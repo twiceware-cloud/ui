@@ -2,14 +2,14 @@ import { type RegistryItem } from "shadcn/registry";
 
 export const gsapComponentRegistries: RegistryItem[] = [
     {
-        name: "text-distorter",
+        name: "distort-text",
         type: "registry:ui",
         dependencies: ["gsap", "@gsap/react"],
         files: [
             {
-                path: "gsap/text-distorter.tsx",
+                path: "gsap/distort-text.tsx",
                 type: "registry:ui",
-                target: "~/components/gsap/text-distorter.tsx",
+                target: "~/components/gsap/distort-text.tsx",
             },
         ],
     },

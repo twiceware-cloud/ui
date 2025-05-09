@@ -1,8 +1,8 @@
-import { TextDistorter } from "@/components/gsap/text-distorter";
+import { DistortText } from "@/components/gsap/distort-text";
 
 export const Demo = () => {
     return (
-        <TextDistorter className="font-mono text-2xl">
+        <DistortText className="font-mono text-2xl">
             <p>
                 Step into a world where text bends to your will. With each hover, the words twist and unravel, only to
                 seamlessly return to their original form, creating an ever-evolving dance of letters and meaning.
@@ -17,6 +17,6 @@ export const Demo = () => {
                 What was once static now pulses with life, shifting and reshaping as you explore. Each hover is a moment
                 of transformation, turning text into a living, breathing entity that adapts to your curiosity.
             </p>
-        </TextDistorter>
+        </DistortText>
     );
 };

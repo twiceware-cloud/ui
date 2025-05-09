@@ -1,13 +1,13 @@
 ---
-slug: components-text-distorter
-title: Text Distorter
+slug: components-distort-text
+title: Distort Text
 description: A responsive text effect that scrambles nearby characters as the cursor moves across a paragraph.
 links:
     api: https://gsap.com/docs/v3/Plugins/ScrambleTextPlugin
 ---
 
 <DemoCodePreview
-    path="demo/components/text-distorter/default.tsx"
+    path="demo/components/distort-text/default.tsx"
 />
 
 ## Installation
@@ -18,7 +18,7 @@ links:
         <TabsTrigger value="manual">Manual</TabsTrigger>
     </TabsList>
     <TabsContent value="cli" className="mt-4">
-        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/text-distorter"`} />
+        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/distort-text"`} />
     </TabsContent>
     <TabsContent value="manual" className="mt-4">
         <Steps>
@@ -29,7 +29,7 @@ links:
             <Step>
                 Copy and paste the following code into your project
             </Step>
-            <CodePreview path='components/gsap/text-distorter.tsx' collapsible></CodePreview>
+            <CodePreview path='components/gsap/distort-text.tsx' collapsible></CodePreview>
 
             <Step>
                 Update the import paths to fit your project setup
@@ -42,19 +42,20 @@ links:
 
 ### Use * as chars
 
-Set `customChar` to any character (e.g., *) to scramble the text with your chosen character.
+Set `distortChar` to any character (e.g., *) to scramble the text with your chosen character.
 
 <DemoCodePreview
-    path="demo/components/text-distorter/asterisk.tsx"
+    path="demo/components/distort-text/asterisk.tsx"
 />
 
 ## Props
 
-### TextScrambler
+### DistortText
 
-| Prop          | Type      | Default |
-|---------------|-----------|---------|
-| scrambleChars | string    | .:      |
-| children      | ReactNode | -       |
+| Prop        | Type      | Default |
+|-------------|-----------|---------|
+| distortChar | string    | .:      |
+| className   | string    | -       |
+| children    | ReactNode | -       |
 
 <span className="text-muted-foreground">Inspired by Tom Miller's work</span>

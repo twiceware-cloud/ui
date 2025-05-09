@@ -55,8 +55,8 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/text-scrambler",
             },
             {
-                title: "Text Distorter",
-                link: components + "/text-distorter",
+                title: "Distort Text",
+                link: components + "/distort-text",
             },
             {
                 title: "Scroll Reveal",
