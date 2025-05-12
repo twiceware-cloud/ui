@@ -109,4 +109,16 @@ export const gsapComponentRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "text-fall-button",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/text-fall-button.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/text-fall-button.tsx",
+            },
+        ],
+    },
 ];

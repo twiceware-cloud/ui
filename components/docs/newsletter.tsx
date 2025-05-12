@@ -3,7 +3,7 @@
 import { NewspaperIcon } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { TextFallButton } from "@/components/gsap/text-fall-button";
 import { Input } from "@/components/ui/input";
 import { ISubscribeResponse, subscribe } from "@/lib/docs";
 
@@ -45,7 +45,9 @@ export const Newsletter = () => {
                     className="bg-background w-72 shadow-none"
                     placeholder="mail@site.com"
                 />
-                <Button className="cursor-pointer">Subscribe</Button>
+                <TextFallButton className="bg-primary text-primary-foreground cursor-pointer rounded-md py-2 ps-3.5 pe-3.75 text-sm font-medium">
+                    Subscribe
+                </TextFallButton>
             </div>
             {result && !result.success && <span className="text-destructive text-sm">{result.message}</span>}
             {result && result.success && <span className="text-sm text-green-500">{result.message}</span>}

@@ -85,6 +85,11 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/draw-line-text",
                 new: true,
             },
+            {
+                title: "Text Fall Button",
+                link: components + "/text-fall-button",
+                new: true,
+            },
         ],
     },
     {
