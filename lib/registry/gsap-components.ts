@@ -97,4 +97,16 @@ export const gsapComponentRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "draw-line-text",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/draw-line-text.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/draw-line-text.tsx",
+            },
+        ],
+    },
 ];

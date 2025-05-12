@@ -65,7 +65,6 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
             {
                 title: "Bouncing Text",
                 link: components + "/bouncing-text",
-                new: true,
             },
             {
                 title: "Mouse Wave Text",
@@ -80,6 +79,10 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
             {
                 title: "Stagger on Scroll",
                 link: components + "/stagger-on-scroll",
+            },
+            {
+                title: "Draw Line Text",
+                link: components + "/draw-line-text",
                 new: true,
             },
         ],

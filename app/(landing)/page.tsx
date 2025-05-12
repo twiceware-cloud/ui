@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Topbar } from "@/components/docs/layouts";
 import { Logo } from "@/components/docs/logo";
 import { Newsletter } from "@/components/docs/newsletter";
+import { DrawLineText } from "@/components/gsap/draw-line-text";
 import { RevealText } from "@/components/gsap/reveal-text";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,17 +18,23 @@ export default function LandingPage() {
                 <div className="flex flex-col items-center justify-center">
                     <div className="max-w-[600px] text-center">
                         <div>
-                            <Link href="/docs/components/bouncing-text/">
+                            <Link href="/docs/components/draw-line-text/">
                                 <Badge variant="outline" color="success" className="font-medium">
-                                    New: Bouncing Text
+                                    New: Draw Line Text
                                 </Badge>
                             </Link>
 
-                            <div className="flex items-center justify-center gap-4">
+                            <div className="mt-1 flex items-center justify-center gap-3">
                                 <Logo className="size-16" />
-                                <RevealText type="chars" gsapVars={{ duration: 1, stagger: 0.2 }}>
-                                    <p className="text-3xl font-semibold sm:text-7xl">PaceUI</p>
-                                </RevealText>
+                                <div className="-mt-3">
+                                    <DrawLineText
+                                        className="font-medium"
+                                        fontSize={72}
+                                        letterSpacing={-1}
+                                        oneByOne={false}
+                                        strokeWidth={1.5}
+                                        text="PaceUI"></DrawLineText>
+                                </div>
                             </div>
                         </div>
                         <RevealText type="words" gsapVars={{ stagger: 0.08 }}>
