@@ -49,7 +49,7 @@ export const DrawLineText = ({
                 totalWidth +=
                     +(elementWidth == 0 ? wordSpacing : elementWidth) +
                     (children.length - 1 != index ? letterSpacing : 0);
-                const length = el.getComputedTextLength() * 6;
+                const length = el.getComputedTextLength() * 8;
                 el.style.strokeDasharray = length + "px";
                 el.style.strokeDashoffset = length + "px";
             });
@@ -85,7 +85,7 @@ export const DrawLineText = ({
             style={{
                 userSelect: "none",
                 width: textDimension.width + "px",
-                height: textDimension.height + "px",
+                height: textDimension.height * 1.03 + "px",
             }}
             className={className}>
             {text.split("").map((char, i) => (
