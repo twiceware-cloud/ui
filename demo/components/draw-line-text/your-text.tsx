@@ -1,3 +1,5 @@
+"use effect";
+
 import { useEffect, useRef, useState } from "react";
 
 import { DrawLineText } from "@/components/gsap/draw-line-text";
