@@ -13,9 +13,10 @@ gsap.registerPlugin(CustomEase, CustomBounce, SplitText);
 type SquashTextProps = {
     className?: string;
     children: ReactNode;
+    repeat?: boolean | number;
 };
 
-export const SquashText = ({ children, className }: SquashTextProps) => {
+export const SquashText = ({ children, className, repeat = true }: SquashTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const bounceId = useId();
     const squashEase = `squash-${bounceId}`;
@@ -33,7 +34,10 @@ export const SquashText = ({ children, className }: SquashTextProps) => {
 
             const splitText = new SplitText(wrapperRef.current).chars;
 
-            gsap.timeline({ defaults: { duration: 1.5, stagger: { amount: 0.1, ease: "sine.in" } } })
+            gsap.timeline({
+                defaults: { duration: 1.5, stagger: { amount: 0.1, ease: "sine.in" } },
+                repeat: repeat === true ? -1 : repeat === false ? 0 : repeat,
+            })
                 .from(
                     splitText,
                     {
