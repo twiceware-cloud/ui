@@ -31,6 +31,7 @@ export default function LandingPage() {
                                         className="font-medium"
                                         fontSize={72}
                                         letterSpacing={-1}
+                                        color="var(--color-foreground)"
                                         oneByOne={false}
                                         strokeWidth={1.5}
                                         text="PaceUI"></DrawLineText>
