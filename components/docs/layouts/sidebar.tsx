@@ -19,6 +19,7 @@ export type SidebarNavItem = {
     expanded?: boolean;
     new?: boolean;
     comingSoon?: boolean;
+    isLabel?: boolean;
 };
 
 type SidebarProps = {
@@ -54,7 +55,7 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
                 onValueChange={setMenuKeys}
                 className="group/arrow space-y-1.5 pt-1 pb-6">
                 {items.map((item, key) => (
-                    <SidebarNavItem key={key} item={item} pathname={pathname} />
+                    <SidebarNavItem key={key} item={item} pathname={pathname} index={key} />
                 ))}
             </Accordion>
             <div className="from-background absolute top-0 h-5 w-full bg-gradient-to-b to-transparent"></div>
@@ -63,8 +64,19 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
     );
 };
 
-const SidebarNavItem = ({ item, pathname }: { item: SidebarNavItem; pathname: string }) => {
+const SidebarNavItem = ({ item, pathname, index }: { item: SidebarNavItem; pathname: string; index: number }) => {
     const isActive = pathname == item.link;
+
+    if (item.isLabel) {
+        return (
+            <p
+                className={cn("text-muted-foreground ms-2 font-medium", {
+                    "mt-3.5": index != 0,
+                })}>
+                {item.title}
+            </p>
+        );
+    }
 
     return item.items ? (
         <AccordionItem
@@ -84,7 +96,7 @@ const SidebarNavItem = ({ item, pathname }: { item: SidebarNavItem; pathname: st
                     "pointer-events-none": item.comingSoon,
                 })}>
                 {item.items.map((item, key) => (
-                    <SidebarNavItem item={item} key={key} pathname={pathname} />
+                    <SidebarNavItem item={item} key={key} pathname={pathname} index={key} />
                 ))}
             </AccordionContent>
         </AccordionItem>

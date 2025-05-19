@@ -1,4 +1,4 @@
-import { BookOpenTextIcon, MilestoneIcon, ShapesIcon, SquareDashedBottomCodeIcon } from "lucide-react";
+import { BookOpenTextIcon, ShapesIcon, SquareDashedBottomCodeIcon } from "lucide-react";
 
 import { SidebarNavItem } from "@/components/docs/layouts";
 import { routes } from "@/lib/docs";
@@ -47,6 +47,10 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
         expanded: true,
         items: [
             {
+                title: "Text based",
+                isLabel: true,
+            },
+            {
                 title: "Reveal Text",
                 link: components + "/reveal-text",
             },
@@ -59,8 +63,8 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/distort-text",
             },
             {
-                title: "Reveal on Scroll",
-                link: components + "/reveal-on-scroll",
+                title: "Scroll based",
+                isLabel: true,
             },
             {
                 title: "Bouncing Text",
@@ -77,8 +81,16 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 new: true,
             },
             {
+                title: "Reveal on Scroll",
+                link: components + "/reveal-on-scroll",
+            },
+            {
                 title: "Stagger on Scroll",
                 link: components + "/stagger-on-scroll",
+            },
+            {
+                title: "Other",
+                isLabel: true,
             },
             {
                 title: "Draw Line Text",
@@ -89,22 +101,6 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 title: "Text Fall Button",
                 link: components + "/text-fall-button",
                 new: true,
-            },
-        ],
-    },
-    {
-        title: "Coming soon",
-        icon: <MilestoneIcon />,
-        comingSoon: true,
-        items: [
-            {
-                title: "Scroll Trigger",
-            },
-            {
-                title: "Scroll Smoother",
-            },
-            {
-                title: "Draggable",
             },
         ],
     },
