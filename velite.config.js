@@ -10,7 +10,7 @@ const docs = defineCollection({
         slug: s.slug("docs"),
         path: s.path(),
         title: s.string().max(99),
-        description: s.string().max(100),
+        description: s.string().max(200),
         links: s
             .object({
                 api: s.string().optional(),
