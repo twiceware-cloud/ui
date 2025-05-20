@@ -102,6 +102,11 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/text-fall-button",
                 new: true,
             },
+            {
+                title: "Tilt Card",
+                link: components + "/tilt-card",
+                new: true,
+            },
         ],
     },
 ];

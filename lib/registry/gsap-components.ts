@@ -121,4 +121,16 @@ export const gsapComponentRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "tilt-card",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/tilt-card.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/tilt-card.tsx",
+            },
+        ],
+    },
 ];

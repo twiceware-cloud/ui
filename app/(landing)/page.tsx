@@ -18,10 +18,8 @@ export default function LandingPage() {
                 <div className="flex flex-col items-center justify-center">
                     <div className="max-w-[600px] text-center">
                         <div>
-                            <Link href="/docs/components/draw-line-text/">
-                                <Badge variant="outline" color="success" className="font-medium">
-                                    New: Draw Line Text
-                                </Badge>
+                            <Link href="/docs/components/tilt-card">
+                                <Badge variant="outline">New: Tilt Card</Badge>
                             </Link>
 
                             <div className="mt-1 flex items-center justify-center gap-3">
