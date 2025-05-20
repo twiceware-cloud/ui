@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export const Demo = () => {
     return (
-        <TiltCard className="bg-card w-80 rounded border p-4" highlightClass="bg-white/15">
+        <TiltCard className="bg-card w-80 rounded border p-4" highlightClass="bg-white/15 dark:bg-white/2">
             <p className="text-muted-foreground font-mono text-xs">09, May 2025</p>
             <p className="mt-1 text-lg/none font-medium">New York, USA</p>
             <img
