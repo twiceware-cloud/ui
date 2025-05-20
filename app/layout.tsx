@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Fira_Code, Work_Sans } from "next/font/google";
@@ -90,6 +91,7 @@ export default function RootLayout({
                 <NextThemesProvider attribute="class" defaultTheme="light">
                     {children}
                 </NextThemesProvider>
+                <Analytics />
             </body>
         </html>
     );
