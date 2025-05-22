@@ -18,8 +18,8 @@ export default function LandingPage() {
                 <div className="flex flex-col items-center justify-center">
                     <div className="max-w-[600px] text-center">
                         <div>
-                            <Link href="/docs/components/tilt-card">
-                                <Badge variant="outline">New: Tilt Card</Badge>
+                            <Link href="/docs/components/flip-reveal">
+                                <Badge variant="outline">New: Flip Reveal</Badge>
                             </Link>
 
                             <div className="mt-1 flex items-center justify-center gap-3">

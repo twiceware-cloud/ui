@@ -110,6 +110,10 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
             {
                 title: "Tilt Card",
                 link: components + "/tilt-card",
+            },
+            {
+                title: "Flip Reveal",
+                link: components + "/flip-reveal",
                 new: true,
             },
         ],
