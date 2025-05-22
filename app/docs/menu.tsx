@@ -63,22 +63,20 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/distort-text",
             },
             {
-                title: "Scroll based",
-                isLabel: true,
+                title: "Squash Text",
+                link: components + "/squash-text",
             },
             {
                 title: "Bouncing Text",
                 link: components + "/bouncing-text",
             },
             {
-                title: "Mouse Wave Text",
-                link: components + "/mouse-wave-text",
-                new: true,
+                title: "Scroll based",
+                isLabel: true,
             },
             {
-                title: "Squash Text",
-                link: components + "/squash-text",
-                new: true,
+                title: "Mouse Wave Text",
+                link: components + "/mouse-wave-text",
             },
             {
                 title: "Reveal on Scroll",
@@ -89,18 +87,25 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
                 link: components + "/stagger-on-scroll",
             },
             {
+                title: "Button",
+                isLabel: true,
+            },
+            {
+                title: "Text Fall Button",
+                link: components + "/text-fall-button",
+            },
+            {
+                title: "Spring Button",
+                link: components + "/spring-button",
+                new: true,
+            },
+            {
                 title: "Other",
                 isLabel: true,
             },
             {
                 title: "Draw Line Text",
                 link: components + "/draw-line-text",
-                new: true,
-            },
-            {
-                title: "Text Fall Button",
-                link: components + "/text-fall-button",
-                new: true,
             },
             {
                 title: "Tilt Card",
