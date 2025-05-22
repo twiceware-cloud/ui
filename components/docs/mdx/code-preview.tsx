@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { codeToHtml } from "shiki";
 
 import { fetchFile } from "@/lib/docs";
+import { cn } from "@/lib/utils";
 
 import { ClientCodePreview } from "./client-code-preview";
 import { ClipboardButton } from "./clipboard-button";
@@ -16,9 +17,10 @@ type Props = {
     collapsible?: boolean;
     removeExtraProps?: boolean;
     lang?: CodeToHastOptionsCommon["lang"];
+    className?: string;
 };
 
-export const CodePreview = ({ path, code, collapsible, removeExtraProps = false, lang = "tsx" }: Props) => {
+export const CodePreview = ({ path, code, collapsible, removeExtraProps = false, lang = "tsx", className }: Props) => {
     const [codeContent, setCodeContent] = useState(code);
     const [highlightedHtml, setHighlightedHtml] = useState<string | undefined>(undefined);
 
@@ -55,7 +57,7 @@ export const CodePreview = ({ path, code, collapsible, removeExtraProps = false,
     }
 
     return (
-        <div className="relative mt-5 mb-4 overflow-hidden rounded">
+        <div className={cn("relative mt-5 mb-4 overflow-hidden rounded", className)}>
             <ClientCodePreview html={highlightedHtml} collapsible={collapsible} />
             <div className="absolute end-3 top-3 z-10">
                 <ClipboardButton text={codeWithoutComments ?? ""} />

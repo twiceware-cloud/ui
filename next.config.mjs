@@ -13,6 +13,7 @@ class VeliteWebpackPlugin {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    devIndicators: false,
     webpack: (config) => {
         config.plugins.push(new VeliteWebpackPlugin());
         return config;

@@ -5,9 +5,13 @@ export const routes = {
         installation: "/docs/installation",
         theme: "/docs/theme",
         components: {
-            home: "/docs/components/bouncing-text",
             base: "/docs/components",
+            home: "/docs/components/bouncing-text",
         },
+    },
+    blocks: {
+        base: "/blocks",
+        home: "/blocks/hero",
     },
     externalLinks: {
         github: "https://github.com/paceui/paceui",

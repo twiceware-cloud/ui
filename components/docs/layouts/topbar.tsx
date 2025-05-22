@@ -36,6 +36,10 @@ export const Topbar = ({ menuItems }: TopbarProps) => {
                     title: "Components",
                     link: routes.docs.components.home,
                 },
+                {
+                    title: "Blocks",
+                    link: routes.blocks.base,
+                },
             ],
         },
         ...(menuItems ?? []),
@@ -68,6 +72,13 @@ export const Topbar = ({ menuItems }: TopbarProps) => {
                         })}
                         href={routes.docs.components.home}>
                         Components
+                    </Link>
+                    <Link
+                        className={cn("text-foreground/80 hover:text-foreground text-sm transition-all", {
+                            "text-foreground font-medium": pathname.includes("/blocks"),
+                        })}
+                        href={routes.blocks.base}>
+                        Blocks
                     </Link>
                 </div>
             </div>
