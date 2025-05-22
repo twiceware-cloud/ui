@@ -9,12 +9,19 @@ gsap.registerPlugin(useGSAP);
 
 type TiltCardProps = {
     maxTilt?: number;
-    highlightClass?: string;
+    highlightClassName?: string;
     className?: string;
+    wrapperClassName?: string;
     children: ReactNode;
 };
 
-export const TiltCard = ({ children, highlightClass, className, maxTilt = 10 }: TiltCardProps) => {
+export const TiltCard = ({
+    children,
+    highlightClassName,
+    className,
+    wrapperClassName,
+    maxTilt = 10,
+}: TiltCardProps) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const cardRef = useRef<HTMLDivElement | null>(null);
     const highlightRef = useRef<HTMLDivElement | null>(null);
@@ -72,6 +79,7 @@ export const TiltCard = ({ children, highlightClass, className, maxTilt = 10 }: 
     return (
         <div
             ref={containerRef}
+            className={wrapperClassName}
             style={{
                 perspective: "1000px",
                 position: "relative",
@@ -81,7 +89,7 @@ export const TiltCard = ({ children, highlightClass, className, maxTilt = 10 }: 
             </div>
             <div
                 ref={highlightRef}
-                className={highlightClass}
+                className={highlightClassName}
                 style={{
                     position: "absolute",
                     height: "100%",
