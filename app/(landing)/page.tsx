@@ -2,7 +2,7 @@ import { BookOpenTextIcon, ChevronRightIcon, ShapesIcon } from "lucide-react";
 import Link from "next/link";
 
 import { Topbar } from "@/components/docs/layouts";
-import { Logo } from "@/components/docs/logo";
+import { LogoIcon } from "@/components/docs/logo-icon";
 import { Newsletter } from "@/components/docs/newsletter";
 import { DrawLineText } from "@/components/gsap/draw-line-text";
 import { RevealText } from "@/components/gsap/reveal-text";
@@ -23,7 +23,7 @@ export default function LandingPage() {
                             </Link>
 
                             <div className="mt-1 flex items-center justify-center gap-3">
-                                <Logo className="size-16" />
+                                <LogoIcon className="size-16" />
                                 <div className="-mt-3">
                                     <DrawLineText
                                         className="font-medium"

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Drawer } from "vaul";
 
 import { Sidebar, SidebarNavItem } from "@/components/docs/layouts";
+import { Logo } from "@/components/docs/logo";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/docs";
 import { cn } from "@/lib/utils";
@@ -57,11 +58,8 @@ export const Topbar = ({ menuItems }: TopbarProps) => {
                         </Drawer.Content>
                     </Drawer.Portal>
                 </Drawer.Root>
-                <Link href={routes.landing} className="flex items-center">
-                    <span className="text-lg font-medium">PaceUI</span>
-                    <div className="ms-1.5 rounded-full bg-green-600 px-1.5 py-0.5 text-xs font-medium tracking-wide text-white">
-                        Beta
-                    </div>
+                <Link href={routes.landing} className="">
+                    <Logo />
                 </Link>
                 <div className="hidden gap-2 md:inline-flex md:gap-6">
                     <Link
