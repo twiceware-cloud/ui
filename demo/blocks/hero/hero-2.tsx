@@ -23,11 +23,11 @@ export const Demo = () => {
                 </div>
             </div>
             <div className="mt-4 flex justify-center sm:mt-8 lg:mt-12">
-                <TiltCard>
-                    <div className="bg-foreground/5 flex h-80 w-full max-w-3xl flex-col items-center justify-center gap-3 rounded-md sm:h-90 lg:h-100">
-                        <ImageIcon className="size-12 opacity-10" />
-                        <p className="opacity-30">Hero Image</p>
-                    </div>
+                <TiltCard
+                    wrapperClassName="w-full max-w-3xl"
+                    className="bg-foreground/5 flex h-80 w-full flex-col items-center justify-center gap-3 rounded-md sm:h-90 lg:h-100">
+                    <ImageIcon className="size-12 opacity-10" />
+                    <p className="opacity-30">Hero Image</p>
                 </TiltCard>
             </div>
         </div>

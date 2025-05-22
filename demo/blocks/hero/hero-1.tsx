@@ -23,12 +23,13 @@ export const Demo = () => {
                         - Built for teams, creators, and product folks
                     </div>
                 </div>
-                <div className="order-1 lg:order-2">
-                    <TiltCard className="bg-foreground/5 flex h-80 flex-col items-center justify-center gap-3 rounded-md">
-                        <ImageIcon className="size-12 opacity-10" />
-                        <p className="opacity-30">Hero Image</p>
-                    </TiltCard>
-                </div>
+
+                <TiltCard
+                    wrapperClassName="order-1 lg:order-2"
+                    className="bg-foreground/5 flex h-80 flex-col items-center justify-center gap-3 rounded-md">
+                    <ImageIcon className="size-12 opacity-10" />
+                    <p className="opacity-30">Hero Image</p>
+                </TiltCard>
             </div>
         </div>
     );
