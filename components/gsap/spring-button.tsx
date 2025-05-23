@@ -13,6 +13,7 @@ type SpringButtonProps = React.ComponentProps<"button"> & {
 
 export const SpringButton = ({ scale = 0.85, shaking = true, ...props }: SpringButtonProps) => {
     const buttonRef = useRef<HTMLButtonElement | null>(null);
+    const pressed = useRef(false);
 
     useGSAP(
         () => {
@@ -22,6 +23,9 @@ export const SpringButton = ({ scale = 0.85, shaking = true, ...props }: SpringB
             let shakingTimeline = gsap.timeline({ repeat: -1 });
 
             const press = () => {
+                pressed.current = true;
+                pressTimeline.pause(0);
+                pressTimeline.kill();
                 pressTimeline = gsap.timeline();
                 shakingTimeline = gsap.timeline({ repeat: -1 });
 
@@ -30,9 +34,9 @@ export const SpringButton = ({ scale = 0.85, shaking = true, ...props }: SpringB
                     duration: 1,
                     ease: "power4.out",
                 });
-                pressTimeline.add(shakingTimeline);
 
                 if (shaking) {
+                    pressTimeline.add(shakingTimeline);
                     shakingTimeline
                         .to(element, { x: -1, y: 1, duration: 0.08 })
                         .to(element, { x: 1, y: -1, duration: 0.08 })
@@ -43,6 +47,7 @@ export const SpringButton = ({ scale = 0.85, shaking = true, ...props }: SpringB
             };
 
             const release = () => {
+                pressed.current = false;
                 if (shakingTimeline) {
                     shakingTimeline.pause(0);
                     shakingTimeline.kill();
@@ -51,6 +56,12 @@ export const SpringButton = ({ scale = 0.85, shaking = true, ...props }: SpringB
                     scale: 1,
                     duration: 0.5,
                     ease: "elastic.out(1.4, 0.2)",
+                    onComplete: () => {
+                        if (!pressed.current && pressTimeline) {
+                            pressTimeline.pause(0);
+                            pressTimeline.kill();
+                        }
+                    },
                 });
             };
 
