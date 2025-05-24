@@ -133,4 +133,28 @@ export const gsapComponentRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "spring-button",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/spring-button.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/spring-button.tsx",
+            },
+        ],
+    },
+    {
+        name: "flip-reveal",
+        type: "registry:ui",
+        dependencies: ["gsap", "@gsap/react"],
+        files: [
+            {
+                path: "gsap/flip-reveal.tsx",
+                type: "registry:ui",
+                target: "~/components/gsap/flip-reveal.tsx",
+            },
+        ],
+    },
 ];
