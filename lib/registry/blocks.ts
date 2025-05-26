@@ -27,4 +27,21 @@ export const blockRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "pricing-1",
+        type: "registry:block",
+        dependencies: ["gsap", "@gsap/react"],
+        registryDependencies: [
+            "https://paceui.com/r/gsap/spring-button",
+            "https://paceui.com/r/gsap/stagger-on-scroll",
+            "button",
+        ],
+        files: [
+            {
+                path: "pricing/pricing-1.tsx",
+                type: "registry:block",
+                target: "~/blocks/pricing-1.tsx",
+            },
+        ],
+    },
 ];
