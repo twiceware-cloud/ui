@@ -1,6 +1,6 @@
 "use client";
 
-import { RotateCcwIcon, Settings2Icon } from "lucide-react";
+import { Settings2Icon } from "lucide-react";
 import React, { ComponentType, useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -36,8 +36,6 @@ export type IDemoPreview = {
 };
 
 export const DemoPreview = ({ path, component, props = [] }: IDemoPreview) => {
-    const [key, setKey] = useState(1);
-
     const Demo = useMemo<ComponentType<ComponentPreviewProp> | undefined>(
         () => component ?? (path ? ClientDemoComponent(path) : undefined),
         [path, component],
@@ -52,10 +50,6 @@ export const DemoPreview = ({ path, component, props = [] }: IDemoPreview) => {
             {},
         ),
     );
-
-    const refresh = () => {
-        setKey(key + 1);
-    };
 
     function formatCamelCase(text: string): string {
         return text
@@ -135,18 +129,9 @@ export const DemoPreview = ({ path, component, props = [] }: IDemoPreview) => {
                         </PopoverContent>
                     </Popover>
                 )}
-                <Button
-                    className="group cursor-pointer shadow-none"
-                    size="icon"
-                    aria-label="Refresh"
-                    title="Refresh"
-                    variant="outline"
-                    onClick={refresh}>
-                    <RotateCcwIcon className="!size-3.5 transition-all group-hover:-rotate-60" />
-                </Button>
             </div>
             <div className={cn("relative flex min-h-80 grow items-center justify-center p-8 lg:p-16")}>
-                <Demo {...compProps} key={key.toString()} />
+                <Demo {...compProps} />
             </div>
         </div>
     );

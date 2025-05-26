@@ -1,14 +1,12 @@
 ---
-slug: components-scramble-text
-title: Scramble Text
-description: A hover-triggered text effect that scrambles and restores characters with smooth motion.
-links:
-    api: https://gsap.com/docs/v3/Plugins/ScrambleTextPlugin
+slug: components-spring-button
+title: Spring Button
+description: A button that shrinks on press and springs back with bounce.
 ---
 
 <DemoCodePreview
-    path="demo/components/scramble-text/default.tsx"
-    v0Link="/gsap/scramble-text"
+    path="demo/components/spring-button/default.tsx"
+    v0Link="/gsap/spring-button"
 />
 
 ## Installation
@@ -19,7 +17,7 @@ links:
         <TabsTrigger value="manual">Manual</TabsTrigger>
     </TabsList>
     <TabsContent value="cli" className="mt-4">
-        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/scramble-text"`} />
+        <InstallationCommand command={`npx shadcn@latest add "~website/r/gsap/spring-button"`} />
     </TabsContent>
     <TabsContent value="manual" className="mt-4">
         <Steps>
@@ -30,7 +28,7 @@ links:
             <Step>
                 Copy and paste the following code into your project
             </Step>
-            <CodePreview path='components/gsap/scramble-text.tsx' collapsible></CodePreview>
+            <CodePreview path='components/gsap/spring-button.tsx' collapsible></CodePreview>
 
             <Step>
                 Update the import paths to fit your project setup
@@ -39,14 +37,23 @@ links:
     </TabsContent>
 </Tabs>
 
+## Examples
+
+### Deeper Press
+
+Set the `scale` value between 0 and 1 to lower values make the button shrink more when pressed.
+
+<DemoCodePreview
+    path="demo/components/spring-button/deeper-press.tsx"
+    v0Link="/gsap/spring-button"
+/>
+
 
 ## Props
 
-### ScrambleText
+### SpringButton
 
-| Prop           | Type      | Default |
-|----------------|-----------|---------|
-| random         | boolean   | true    |
-| scrambleOnLoad | boolean   | true    |
-| className      | string    | -       |
-| children       | ReactNode | -       |
+| Prop    | Type    | Default |
+|---------|---------|---------|
+| scale   | number  | 0.85    |
+| shaking | boolean | true    |
