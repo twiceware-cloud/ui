@@ -1,0 +1,14 @@
+{
+    "name": "hero-1",
+    "type": "registry:block",
+    "dependencies": ["gsap", "@gsap/react"],
+    "registryDependencies": ["https://paceui.com/r/gsap/reveal-text", "https://paceui.com/r/gsap/tilt-card", "badge"],
+    "files": [
+        {
+            "path": "hero/hero-1.tsx",
+            "type": "registry:block",
+            "target": "~/blocks/hero-1.tsx",
+            "content": "import { ImageIcon } from \"lucide-react\";\n\nimport { RevealText } from \"@/components/gsap/reveal-text\";\nimport { TiltCard } from \"@/components/gsap/tilt-card\";\nimport { Badge } from \"@/components/ui/badge\";\n\nexport const Demo = () => {\n    return (\n        <div className=\"bg-background overflow-hidden p-4 sm:p-6 lg:p-12\">\n            <div className=\"grid h-full grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-16\">\n                <div className=\"order-2 flex flex-col items-start lg:order-1\">\n                    <Badge variant=\"outline\" className=\"font-medium\">\n                        Initial Release\n                    </Badge>\n                    <RevealText className=\"mt-2 text-xl font-medium lg:text-3xl\">\n                        Smarter Workflows, Faster Results\n                    </RevealText>\n                    <p className=\"text-muted-foreground mt-1\">\n                        An intuitive platform that helps you write, organize, and automate daily tasks. So you can focus\n                        on what matters.\n                    </p>\n                    <div className=\"text-muted-foreground mt-auto pt-3 italic\">\n                        - Built for teams, creators, and product folks\n                    </div>\n                </div>\n\n                <TiltCard\n                    wrapperClassName=\"order-1 lg:order-2\"\n                    className=\"bg-foreground/5 flex h-80 flex-col items-center justify-center gap-3 rounded-md\">\n                    <ImageIcon className=\"size-12 opacity-10\" />\n                    <p className=\"opacity-30\">Hero Image</p>\n                </TiltCard>\n            </div>\n        </div>\n    );\n};\n"
+        }
+    ]
+}

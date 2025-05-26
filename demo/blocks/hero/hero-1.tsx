@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 
 export const Demo = () => {
     return (
-        <div className="bg-background overflow-hidden p-4 sm:p-6 lg:p-12">
+        <div className="bg-background overflow-hidden p-6 sm:p-12 lg:p-24">
             <div className="grid h-full grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-16">
                 <div className="order-2 flex flex-col items-start lg:order-1">
                     <Badge variant="outline" className="font-medium">

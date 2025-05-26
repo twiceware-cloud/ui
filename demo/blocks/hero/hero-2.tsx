@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 
 export const Demo = () => {
     return (
-        <div className="bg-background container overflow-hidden py-8 sm:py-12 lg:py-20">
+        <div className="bg-background container overflow-hidden py-8 sm:py-16 lg:py-24">
             <div className="flex flex-col items-center">
                 <Badge variant="outline" className="font-medium">
                     Initial Release
