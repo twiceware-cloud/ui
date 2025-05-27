@@ -18,8 +18,8 @@ export default function LandingPage() {
                 <div className="flex flex-col items-center justify-center">
                     <div className="max-w-[600px] text-center">
                         <div>
-                            <Link href="/docs/components/flip-reveal">
-                                <Badge variant="outline">New: Flip Reveal</Badge>
+                            <Link href="/docs/components/spring-button">
+                                <Badge variant="outline">Exciting updates ahead</Badge>
                             </Link>
 
                             <div className="mt-1 flex items-center justify-center gap-3">
@@ -36,8 +36,8 @@ export default function LandingPage() {
                                 </div>
                             </div>
                         </div>
-                        <RevealText type="words" gsapVars={{ stagger: 0.08 }}>
-                            <p className="text-foreground/80 mt-4 sm:text-xl">
+                        <RevealText type="words" gsapVars={{ stagger: 0.08 }} className="mt-4">
+                            <p className="text-foreground/80 sm:text-xl">
                                 A <span className="font-semibold">GSAP</span> component for dynamic animations, ready to
                                 use in your React & Next.js projects.
                             </p>
