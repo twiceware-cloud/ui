@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { ReactNode, useMemo, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -51,12 +51,22 @@ export const RevealText = ({
 }: RevealTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
+    const splitType = useMemo(
+        () =>
+            ({
+                chars: "chars,words,lines",
+                words: "words,lines",
+                lines: "lines",
+            })[type],
+        [type],
+    );
+
     useGSAP(
         () => {
             const element = wrapperRef.current;
             if (!element) return;
 
-            const splitText = SplitText.create(element, { type, ...splitTextVars });
+            const splitText = SplitText.create(element, { type: splitType, ...splitTextVars });
             gsap.from(splitText[type], {
                 ...defaultGsapVars[type],
                 ...gsapVars,
