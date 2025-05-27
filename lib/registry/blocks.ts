@@ -5,7 +5,12 @@ export const blockRegistries: RegistryItem[] = [
         name: "hero-1",
         type: "registry:block",
         dependencies: ["gsap", "@gsap/react"],
-        registryDependencies: ["https://paceui.com/r/gsap/reveal-text", "https://paceui.com/r/gsap/tilt-card", "badge"],
+        registryDependencies: [
+            "https://paceui.com/r/gsap/reveal-text",
+            "https://paceui.com/r/gsap/tilt-card",
+            "https://paceui.com/r/gsap/spring-button",
+            "https://paceui.com/r/gsap/text-fall-button",
+        ],
         files: [
             {
                 path: "hero/hero-1.tsx",
@@ -18,7 +23,11 @@ export const blockRegistries: RegistryItem[] = [
         name: "hero-2",
         type: "registry:block",
         dependencies: ["gsap", "@gsap/react"],
-        registryDependencies: ["https://paceui.com/r/gsap/reveal-text", "https://paceui.com/r/gsap/tilt-card", "badge"],
+        registryDependencies: [
+            "https://paceui.com/r/gsap/reveal-text",
+            "https://paceui.com/r/gsap/spring-button",
+            "https://paceui.com/r/gsap/text-fall-button",
+        ],
         files: [
             {
                 path: "hero/hero-2.tsx",
