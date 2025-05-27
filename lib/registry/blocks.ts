@@ -44,4 +44,17 @@ export const blockRegistries: RegistryItem[] = [
             },
         ],
     },
+    {
+        name: "product-filter-1",
+        type: "registry:block",
+        dependencies: ["gsap", "@gsap/react"],
+        registryDependencies: ["https://paceui.com/r/gsap/flip-reveal", "input", "label", "select"],
+        files: [
+            {
+                path: "product-filter/product-filter-1.tsx",
+                type: "registry:block",
+                target: "~/blocks/product-filter-1.tsx",
+            },
+        ],
+    },
 ];

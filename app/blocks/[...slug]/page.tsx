@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { routes } from "@/lib/docs";
 
-import { blocksSidebarNavItems } from "../menu";
+import { blockSections } from "../menu";
 
 interface PageProps {
     params: Promise<{
@@ -66,14 +66,16 @@ export default async function Page(props: PageProps) {
                                 Back to blocks
                             </Link>
                             <div className="mt-1">
-                                {blocksSidebarNavItems.map((item, index) => (
-                                    <Link
-                                        href={item.href}
-                                        key={index}
-                                        className="hover:bg-foreground/5 block rounded px-2.5 py-1">
-                                        {item.title}
-                                    </Link>
-                                ))}
+                                {blockSections.map((section) =>
+                                    section.items.map((item, index) => (
+                                        <Link
+                                            href={item.href}
+                                            key={index}
+                                            className="hover:bg-foreground/5 block rounded px-2.5 py-1">
+                                            {item.title}
+                                        </Link>
+                                    )),
+                                )}
                             </div>
                         </PopoverContent>
                     </Popover>
