@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container">
             <Topbar />
             <div className="flex">
-                <div className="mt-4 min-w-0 grow">{children}</div>
+                <div className="min-w-0 grow">{children}</div>
             </div>
         </div>
     );

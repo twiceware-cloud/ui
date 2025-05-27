@@ -92,6 +92,26 @@ export const blockSections: IBlockSection[] = [
                     </div>
                 ),
             },
+            {
+                title: "Product",
+                badge: "new",
+                href: blocks + "/product",
+                demo: (
+                    <div className="flex items-center justify-center p-8">
+                        <div className="bg-foreground/5 w-40 rounded">
+                            <div className="bg-foreground/5 m-1 h-20 rounded"></div>
+                            <div className="m-2 space-y-1">
+                                <div className="flex items-center justify-between">
+                                    <div className="bg-foreground/5 h-1.5 w-[20%] rounded-xs"></div>
+                                    <div className="bg-foreground/10 h-1.5 w-[15%] rounded-xs"></div>
+                                </div>
+                                <div className="bg-foreground/10 h-2.5 w-[60%] rounded-xs"></div>
+                                <div className="bg-foreground/5 h-4 w-[80%] rounded-xs"></div>
+                            </div>
+                        </div>
+                    </div>
+                ),
+            },
         ],
     },
 ];

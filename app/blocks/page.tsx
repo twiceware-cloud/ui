@@ -7,10 +7,10 @@ import { blockSections } from "./menu";
 
 export default async function Page() {
     return (
-        <div className="">
-            <div className="mt-12 flex flex-col items-center justify-center">
-                <h1 className="text-5xl font-semibold">Blocks</h1>
-                <p className="text-muted-foreground mt-1 w-xl text-center">
+        <div className="mt-4 sm:mt-8 xl:mt-16">
+            <div className="flex flex-col items-center justify-center">
+                <h1 className="text-2xl font-semibold sm:text-3xl xl:text-4xl 2xl:text-5xl">Blocks</h1>
+                <p className="text-muted-foreground mt-1 max-w-xl text-center max-sm:text-sm">
                     Beautiful, responsive, and production ready sections you can instantly add to your React project
                     with one shadcn command.
                 </p>

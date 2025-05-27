@@ -40,7 +40,7 @@ export default async function Page(props: PageProps) {
 
     return (
         <div className="">
-            <div className="flex items-start py-5">
+            <div className="flex items-start py-4 sm:py-8 xl:py-12">
                 <div>
                     <Button size="icon" variant="outline" className="shadow-none md:hidden" asChild>
                         <Link href={routes.blocks.base}>
@@ -81,8 +81,10 @@ export default async function Page(props: PageProps) {
                     </Popover>
                 </div>
                 <div className="mx-auto -translate-x-4.5 text-center">
-                    <h1 className="text-4xl font-semibold">{page.title}</h1>
-                    <h1 className="text-muted-foreground">{page.description}</h1>
+                    <h1 className="text-2xl font-semibold sm:text-3xl xl:text-4xl">{page.title}</h1>
+                    <h1 className="text-muted-foreground mt-1 max-w-lg text-center max-sm:text-sm">
+                        {page.description}
+                    </h1>
                 </div>
             </div>
 
