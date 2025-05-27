@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, ChevronLeftIcon, MenuIcon } from "lucide-react";
+import { ArrowLeftIcon, MenuIcon } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -41,46 +41,39 @@ export default async function Page(props: PageProps) {
     return (
         <div className="">
             <div className="flex items-start py-4 sm:py-8 xl:py-12">
-                <div>
-                    <Button size="icon" variant="outline" className="shadow-none md:hidden" asChild>
-                        <Link href={routes.blocks.base}>
-                            <ChevronLeftIcon />
+                <Popover>
+                    <PopoverTrigger asChild>
+                        <Button
+                            className="cursor-pointer shadow-none max-md:hidden"
+                            size="icon"
+                            aria-label="Menu"
+                            title="Menu"
+                            variant="outline">
+                            <MenuIcon className="!size-4" />
+                        </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-52 px-1.5 py-3" align="start">
+                        <Link
+                            href={routes.blocks.base}
+                            className="text-muted-foreground hover:text-foreground flex items-center gap-1 px-2.5 text-sm italic transition-all hover:underline">
+                            <ArrowLeftIcon className="size-3.5" />
+                            Back to blocks
                         </Link>
-                    </Button>
-                    <Popover>
-                        <PopoverTrigger asChild>
-                            <Button
-                                className="cursor-pointer shadow-none max-md:hidden"
-                                size="icon"
-                                aria-label="Menu"
-                                title="Menu"
-                                variant="outline">
-                                <MenuIcon className="!size-4" />
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-52 px-1.5 py-3" align="start">
-                            <Link
-                                href={routes.blocks.base}
-                                className="text-muted-foreground hover:text-foreground flex items-center gap-1 px-2.5 text-sm italic transition-all hover:underline">
-                                <ArrowLeftIcon className="size-3.5" />
-                                Back to blocks
-                            </Link>
-                            <div className="mt-1">
-                                {blockSections.map((section) =>
-                                    section.items.map((item, index) => (
-                                        <Link
-                                            href={item.href}
-                                            key={index}
-                                            className="hover:bg-foreground/5 block rounded px-2.5 py-1">
-                                            {item.title}
-                                        </Link>
-                                    )),
-                                )}
-                            </div>
-                        </PopoverContent>
-                    </Popover>
-                </div>
-                <div className="mx-auto -translate-x-4.5 text-center">
+                        <div className="mt-1">
+                            {blockSections.map((section) =>
+                                section.items.map((item, index) => (
+                                    <Link
+                                        href={item.href}
+                                        key={index}
+                                        className="hover:bg-foreground/5 block rounded px-2.5 py-1">
+                                        {item.title}
+                                    </Link>
+                                )),
+                            )}
+                        </div>
+                    </PopoverContent>
+                </Popover>
+                <div className="mx-auto text-center md:-translate-x-4.5">
                     <h1 className="text-2xl font-semibold sm:text-3xl xl:text-4xl">{page.title}</h1>
                     <h1 className="text-muted-foreground mt-1 max-w-lg text-center max-sm:text-sm">
                         {page.description}
@@ -88,11 +81,7 @@ export default async function Page(props: PageProps) {
                 </div>
             </div>
 
-            {page.code && (
-                <div className="my-8">
-                    <MDXContent code={page.code} />
-                </div>
-            )}
+            {page.code && <MDXContent code={page.code} />}
         </div>
     );
 }

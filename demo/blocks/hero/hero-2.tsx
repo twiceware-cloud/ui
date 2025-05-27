@@ -16,14 +16,14 @@ export const Demo = () => {
                         <p>Built for focused momentum</p>
                     </div>
 
-                    <RevealText className="mt-3 text-center text-2xl leading-[1.25] font-semibold sm:text-3xl lg:text-4xl">
+                    <RevealText className="mt-3 text-center text-2xl leading-[1.25] font-semibold text-balance sm:text-3xl lg:text-4xl">
                         Clear Goals. Sharp Tools. Fast Progress.
                     </RevealText>
-                    <p className="text-foreground/80 mt-5 max-w-lg text-center">
+                    <p className="text-foreground/80 mt-3 max-w-lg text-center max-sm:text-sm lg:mt-5">
                         Create, organize, and move forward with tools designed for clarity, flow, and real results
                         across your everyday work.
                     </p>
-                    <div className="mt-6 flex items-center gap-3 sm:mt-8">
+                    <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8">
                         <SpringButton
                             shaking={false}
                             className="flex cursor-pointer items-center gap-2 rounded-full border px-4 py-2 font-medium shadow-none">
@@ -39,22 +39,22 @@ export const Demo = () => {
                             <img
                                 src="/images/avatars/8.jpg"
                                 alt="Avatar"
-                                className="border-background size-12 rounded-full border-4"
+                                className="border-background size-10 rounded-full border-4 sm:size-12"
                             />
                             <img
                                 src="/images/avatars/5.jpg"
                                 alt="Avatar"
-                                className="border-background size-12 rounded-full border-4"
+                                className="border-background size-10 rounded-full border-4 sm:size-12"
                             />
                             <img
                                 src="/images/avatars/4.jpg"
                                 alt="Avatar"
-                                className="border-background size-12 rounded-full border-4"
+                                className="border-background size-10 rounded-full border-4 sm:size-12"
                             />
                         </div>
                         <div>
                             <p className="font-medium">28k+</p>
-                            <p className="text-muted-foreground text-sm leading-none">
+                            <p className="text-muted-foreground text-sm leading-none max-sm:text-xs">
                                 Professionals using it every day
                             </p>
                         </div>
@@ -71,10 +71,10 @@ export const Demo = () => {
 
             <div className="bg-foreground/5 -mt-24 pt-36 pb-24">
                 <p className="text-muted-foreground text-center text-lg font-medium">Used by top companies</p>
-                <div className="*: container mt-4 flex items-center justify-between gap-5 *:opacity-50 *:brightness-0 *:transition-all *:hover:opacity-100 *:hover:brightness-100 lg:mt-8 *:not-hover:dark:invert">
+                <div className="*: container mt-4 flex items-center justify-around gap-5 *:opacity-50 *:brightness-0 *:transition-all *:hover:opacity-100 *:hover:brightness-100 lg:mt-8 *:not-hover:dark:invert">
                     <img src="/images/companies/loom.png" className="h-8" alt="Company Image" />
                     <img src="/images/companies/notion.png" className="h-9" alt="Company Image" />
-                    <img src="/images/companies/slack.png" className="h-8" alt="Company Image" />
+                    <img src="/images/companies/slack.png" className="h-8 max-sm:hidden" alt="Company Image" />
                     <img src="/images/companies/hubspot.png" className="h-8 max-md:hidden" alt="Company Image" />
                     <img src="/images/companies/dropbox.png" className="h-8 max-md:hidden" alt="Company Image" />
                 </div>

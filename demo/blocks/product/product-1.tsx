@@ -179,7 +179,9 @@ export const Demo = () => {
                                         </div>
                                     </TooltipProvider>
                                     <div className="mt-3 flex items-end justify-between">
-                                        <p className="text-muted-foreground text-sm">Available in stock</p>
+                                        <p className="text-muted-foreground text-sm max-sm:text-xs">
+                                            Available in stock
+                                        </p>
                                         <SpringButton
                                             scale={0.95}
                                             shaking={false}

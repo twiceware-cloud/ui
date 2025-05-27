@@ -211,7 +211,7 @@ export const Demo = () => {
                 </div>
                 {visibleProductKeys[0] === "all" || visibleProductKeys.length > 0 ? (
                     <FlipReveal
-                        className="mt-3 grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
+                        className="mt-3 grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
                         keys={visibleProductKeys}
                         showClass="flex"
                         hideClass="hidden">
@@ -225,7 +225,7 @@ export const Demo = () => {
                                             <img
                                                 src={product.image}
                                                 alt={product.name}
-                                                className="h-50 w-full rounded-md object-cover"
+                                                className="h-32 w-full rounded-md object-cover sm:h-40 xl:h-50"
                                             />
                                             <div className="bg-background absolute end-1 bottom-1 z-1 flex items-center gap-0.5 rounded px-1 py-0.5 text-xs opacity-0 transition-all group-hover:opacity-100">
                                                 <PlusIcon className="size-3" />

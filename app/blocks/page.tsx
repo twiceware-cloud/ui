@@ -15,11 +15,11 @@ export default async function Page() {
                     with one shadcn command.
                 </p>
             </div>
-            <div className="mt-16">
+            <div className="mt-8 sm:mt-12 xl:mt-16">
                 {blockSections.map((block, index) => (
-                    <div key={index} className="mt-8">
+                    <div key={index} className="mt-4 lg:mt-8">
                         <p className="text-lg font-medium">{block.title}</p>
-                        <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
+                        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-8 xl:grid-cols-3">
                             {block.items.map((item, index) => (
                                 <Link href={item.href} key={index}>
                                     <Card className="group relative overflow-hidden rounded border shadow-none">
@@ -39,8 +39,10 @@ export default async function Page() {
                     </div>
                 ))}
             </div>
-            <div className="my-16 flex items-center justify-center border-t border-dashed">
-                <Link href="/" className="mt-8 max-w-88 grow">
+            <div className="mt-4 border-t border-dashed sm:mt-6 xl:mt-8"></div>
+            <div>
+                <p className="mt-4 text-lg font-medium">More Blocks</p>
+                <Link href="/" className="mt-4 block max-w-88">
                     <Card className="overflow-hidden rounded border shadow-none">
                         <div className="bg-foreground/3 relative h-44">
                             <Badge className="absolute start-3 top-3">In Development</Badge>
