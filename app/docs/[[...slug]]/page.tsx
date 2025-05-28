@@ -45,7 +45,7 @@ export default async function Page(props: PageProps) {
 
     return (
         <div className="flex md:gap-4 xl:gap-8 2xl:gap-16">
-            <div className="mx-auto w-full min-w-0 grow md:ps-4 xl:ps-8 2xl:ps-16">
+            <div className="w-full min-w-0 grow">
                 <BreadcrumbList className="sm:gap-1.5">
                     <BreadcrumbItem>
                         <Link className="text-foreground/80" href={routes.docs.home}>
@@ -57,8 +57,8 @@ export default async function Page(props: PageProps) {
                         <BreadcrumbPage className="text-foreground">{page.title}</BreadcrumbPage>
                     </BreadcrumbItem>
                 </BreadcrumbList>
-                <h1 className="mt-3 text-3xl font-semibold">{page.title}</h1>
-                <h2 className="text-muted-foreground">{page.description}</h2>
+                <h1 className="mt-2 text-xl font-semibold sm:mt-3 sm:text-2xl xl:text-3xl">{page.title}</h1>
+                <h2 className="text-muted-foreground max-sm:text-sm">{page.description}</h2>
                 {page.links && (
                     <div className="mt-4 flex gap-2">
                         {page.links.api && (
@@ -81,7 +81,7 @@ export default async function Page(props: PageProps) {
                     <DocsPagination prev={pager.prev} next={pager.next} />
                 </div>
             </div>
-            <div className="sticky top-24 hidden max-h-[calc(100vh-100px)] w-52 xl:block">
+            <div className="sticky top-24 hidden h-full w-52 min-w-52 xl:block">
                 <TableOfContent entries={page.toc} />
                 <div className="mt-4">
                     <p className="text-foreground/80 text-sm font-medium">Join us</p>

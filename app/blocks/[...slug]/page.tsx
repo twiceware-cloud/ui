@@ -39,8 +39,8 @@ export default async function Page(props: PageProps) {
     }
 
     return (
-        <div className="">
-            <div className="flex items-start py-4 sm:py-8 xl:py-12">
+        <div>
+            <div className="flex items-start">
                 <Popover>
                     <PopoverTrigger asChild>
                         <Button

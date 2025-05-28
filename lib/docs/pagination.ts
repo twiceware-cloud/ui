@@ -14,7 +14,7 @@ export const createPaginationPair = ({
 }): PaginationPair => {
     const flatSections = items.flatMap((item) => (item.comingSoon ? [] : item.items)).filter((e) => e != undefined);
 
-    const currentIndex = flatSections.findIndex((item) => item.link?.includes(activePath));
+    const currentIndex = flatSections.findIndex((item) => item.href?.includes(activePath));
 
     if (currentIndex === -1) return pagerPair;
 
@@ -22,7 +22,7 @@ export const createPaginationPair = ({
         if (currentIndex > 0) {
             pagerPair.prev = {
                 title: flatSections[currentIndex - 1].title,
-                link: flatSections[currentIndex - 1].link ?? "#",
+                href: flatSections[currentIndex - 1].href ?? "#",
             };
         } else {
             pagerPair.prev = defaultPagerPair?.prev;
@@ -33,7 +33,7 @@ export const createPaginationPair = ({
         if (currentIndex < flatSections.length - 1) {
             pagerPair.next = {
                 title: flatSections[currentIndex + 1].title,
-                link: flatSections[currentIndex + 1].link ?? "#",
+                href: flatSections[currentIndex + 1].href ?? "#",
             };
         } else {
             pagerPair.next = defaultPagerPair?.next;

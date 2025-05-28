@@ -24,8 +24,10 @@
 
 @layer utilities {
     .container {
-        margin-inline: auto;
-        @apply px-[1rem] 2xl:px-[4rem];
+        @apply mx-auto px-[1rem] 2xl:px-[4rem];
+    }
+    .container-wrapper {
+        @apply container mx-auto px-0;
     }
 }
 

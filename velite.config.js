@@ -20,13 +20,13 @@ const docs = defineCollection({
         toc: s.toc(),
         pagerPrev: s
             .object({
-                link: s.string(),
+                href: s.string(),
                 title: s.string(),
             })
             .optional(),
         pagerNext: s
             .object({
-                link: s.string(),
+                href: s.string(),
                 title: s.string(),
             })
             .optional(),

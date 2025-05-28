@@ -15,11 +15,11 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
         items: [
             {
                 title: "Introduction",
-                link: base.home,
+                href: base.home,
             },
             {
                 title: "Installation",
-                link: base.installation,
+                href: base.installation,
             },
         ],
     },
@@ -29,15 +29,15 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
         items: [
             {
                 title: "Next.js",
-                link: base.installation + "/next",
+                href: base.installation + "/next",
             },
             {
                 title: "Vite",
-                link: base.installation + "/vite",
+                href: base.installation + "/vite",
             },
             {
                 title: "Manual",
-                link: base.installation + "/manual",
+                href: base.installation + "/manual",
             },
         ],
     },
@@ -52,23 +52,23 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
             },
             {
                 title: "Reveal Text",
-                link: components + "/reveal-text",
+                href: components + "/reveal-text",
             },
             {
                 title: "Scramble Text",
-                link: components + "/scramble-text",
+                href: components + "/scramble-text",
             },
             {
                 title: "Distort Text",
-                link: components + "/distort-text",
+                href: components + "/distort-text",
             },
             {
                 title: "Squash Text",
-                link: components + "/squash-text",
+                href: components + "/squash-text",
             },
             {
                 title: "Bouncing Text",
-                link: components + "/bouncing-text",
+                href: components + "/bouncing-text",
             },
             {
                 title: "Scroll based",
@@ -76,15 +76,15 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
             },
             {
                 title: "Mouse Wave Text",
-                link: components + "/mouse-wave-text",
+                href: components + "/mouse-wave-text",
             },
             {
                 title: "Reveal on Scroll",
-                link: components + "/reveal-on-scroll",
+                href: components + "/reveal-on-scroll",
             },
             {
                 title: "Stagger on Scroll",
-                link: components + "/stagger-on-scroll",
+                href: components + "/stagger-on-scroll",
             },
             {
                 title: "Button",
@@ -92,11 +92,11 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
             },
             {
                 title: "Text Fall Button",
-                link: components + "/text-fall-button",
+                href: components + "/text-fall-button",
             },
             {
                 title: "Spring Button",
-                link: components + "/spring-button",
+                href: components + "/spring-button",
                 new: true,
             },
             {
@@ -105,15 +105,15 @@ export const docsSidebarNavItems: SidebarNavItem[] = [
             },
             {
                 title: "Draw Line Text",
-                link: components + "/draw-line-text",
+                href: components + "/draw-line-text",
             },
             {
                 title: "Tilt Card",
-                link: components + "/tilt-card",
+                href: components + "/tilt-card",
             },
             {
                 title: "Flip Reveal",
-                link: components + "/flip-reveal",
+                href: components + "/flip-reveal",
                 new: true,
             },
         ],

@@ -155,8 +155,12 @@ export const BlockPreview = ({ path, registry, smHeight, mdHeight, lgHeight }: I
                         </Link>
                     )}
                     {registry && <hr className="h-6 border-s" />}
-                    <Button size="icon" variant="ghost" className="cursor-pointer shadow-none" onClick={refreshIframe}>
-                        <RotateCcwIcon className="!size-4.5" />
+                    <Button
+                        size="icon"
+                        variant="ghost"
+                        className="group cursor-pointer shadow-none"
+                        onClick={refreshIframe}>
+                        <RotateCcwIcon className="!size-4.5 transition-all group-hover:-rotate-60" />
                     </Button>
                 </div>
             </div>

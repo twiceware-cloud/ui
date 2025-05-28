@@ -6,16 +6,18 @@ import { usePathname } from "next/navigation";
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { ClassNameValue } from "tailwind-merge";
 
+import { Logo } from "@/components/docs/logo";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { routes } from "@/lib/docs";
 import { cn } from "@/lib/utils";
 
 export type SidebarNavItem = {
     icon?: ReactNode;
     title: string;
     items?: SidebarNavItem[];
-    link?: string;
+    href?: string;
     expanded?: boolean;
     new?: boolean;
     comingSoon?: boolean;
@@ -34,7 +36,7 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
         return items
             .filter((item) => {
                 if (!item.expanded) {
-                    return item.items?.find((item) => item.link == pathname);
+                    return item.items?.find((item) => item.href == pathname);
                 }
                 return item.expanded;
             })
@@ -48,24 +50,29 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
     }, [pathname, items, getOpenMenuKeys]);
 
     return (
-        <ScrollArea className={cn("relative h-full", className)}>
-            <Accordion
-                type="multiple"
-                value={menuKeys}
-                onValueChange={setMenuKeys}
-                className="group/arrow space-y-1.5 pt-1 pb-6">
-                {items.map((item, key) => (
-                    <SidebarNavItem key={key} item={item} pathname={pathname} index={key} />
-                ))}
-            </Accordion>
-            <div className="from-background absolute top-0 h-5 w-full bg-gradient-to-b to-transparent"></div>
-            <div className="from-background absolute bottom-0 h-5 w-full bg-gradient-to-t to-transparent"></div>
-        </ScrollArea>
+        <div className={cn("flex h-full flex-col", className)}>
+            <Link href={routes.landing} className="flex min-h-15 items-center border-b border-dashed px-5">
+                <Logo />
+            </Link>
+            <ScrollArea className="relative min-h-0 grow px-5">
+                <Accordion
+                    type="multiple"
+                    value={menuKeys}
+                    onValueChange={setMenuKeys}
+                    className="group/arrow space-y-1.5 pt-3 pb-6">
+                    {items.map((item, key) => (
+                        <SidebarNavItem key={key} item={item} pathname={pathname} index={key} />
+                    ))}
+                </Accordion>
+                <div className="from-background absolute top-0 h-5 w-full bg-gradient-to-b to-transparent"></div>
+                <div className="from-background absolute bottom-0 h-5 w-full bg-gradient-to-t to-transparent"></div>
+            </ScrollArea>
+        </div>
     );
 };
 
 const SidebarNavItem = ({ item, pathname, index }: { item: SidebarNavItem; pathname: string; index: number }) => {
-    const isActive = pathname == item.link;
+    const isActive = pathname == item.href;
 
     if (item.isLabel) {
         return (
@@ -105,7 +112,7 @@ const SidebarNavItem = ({ item, pathname, index }: { item: SidebarNavItem; pathn
             className={cn("hover:bg-foreground/5 flex h-7.5 items-center gap-2 rounded px-2.5 transition-all", {
                 "bg-foreground/5": isActive,
             })}
-            href={item.link ?? "#"}>
+            href={item.href ?? "#"}>
             {item.icon && <Slot className="size-4">{item.icon}</Slot>}
             {item.title}
             {item.comingSoon && <Badge className="ms-auto">Coming soon</Badge>}
