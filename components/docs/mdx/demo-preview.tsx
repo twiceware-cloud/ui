@@ -75,7 +75,7 @@ export const DemoPreview = ({ path, component, props = [] }: IDemoPreview) => {
                                 <Settings2Icon className="!size-4 transition-all" />
                             </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-60">
+                        <PopoverContent className="w-52 max-w-60" align="end">
                             <div className="space-y-3">
                                 {props.map((prop, index) => {
                                     return (

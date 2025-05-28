@@ -15,7 +15,7 @@ export type PaginationPair = {
 
 export const DocsPagination = ({ next, prev }: PaginationPair) => {
     return (
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center justify-between gap-4 max-sm:flex-col max-sm:items-center">
             {prev && (
                 <Button variant="outline" asChild className="h-fit px-3.5 py-2.5 shadow-none">
                     <Link href={prev.href} className="inline-flex gap-2 sm:gap-3">
@@ -28,7 +28,7 @@ export const DocsPagination = ({ next, prev }: PaginationPair) => {
                 </Button>
             )}
             {next && (
-                <Button variant="outline" asChild className="ms-auto h-fit px-3.5 py-2.5 shadow-none">
+                <Button variant="outline" asChild className="h-fit px-3.5 py-2.5 shadow-none sm:ms-auto">
                     <Link href={next.href} className="inline-flex gap-2 sm:gap-3">
                         <div className="text-start">
                             <p className="text-muted-foreground text-xs/none">Next</p>

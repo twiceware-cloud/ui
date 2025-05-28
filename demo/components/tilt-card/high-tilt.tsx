@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export const Demo = () => {
     return (
         <TiltCard
-            className="bg-card w-80 rounded border p-4"
+            className="bg-card w-64 rounded border p-4 sm:w-80"
             highlightClassName="bg-white/15 dark:bg-white/2"
             maxTilt={25}>
             <p className="text-muted-foreground font-mono text-xs">09, May 2025</p>

@@ -10,7 +10,11 @@ export const Demo = () => {
 
     return (
         <div className="flex min-h-120 flex-col items-center gap-8">
-            <ToggleGroup type="single" className="rounded-md border p-1" value={key} onValueChange={(e) => setKey(e)}>
+            <ToggleGroup
+                type="single"
+                className="bg-background rounded-md border p-1"
+                value={key}
+                onValueChange={(e) => setKey(e)}>
                 <ToggleGroupItem value="all" className="sm:px-4">
                     All
                 </ToggleGroupItem>
@@ -24,7 +28,7 @@ export const Demo = () => {
                     Shoes
                 </ToggleGroupItem>
             </ToggleGroup>
-            <FlipReveal className="grid grid-cols-3 gap-4" keys={[key]} showClass="flex" hideClass="hidden">
+            <FlipReveal className="grid grid-cols-3 gap-3 sm:gap-4" keys={[key]} showClass="flex" hideClass="hidden">
                 <FlipRevealItem flipKey="shirt">
                     <img
                         src="https://images.unsplash.com/photo-1696086152504-4843b2106ab4?q=80&w=300"

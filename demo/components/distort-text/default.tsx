@@ -2,7 +2,7 @@ import { DistortText } from "@/components/gsap/distort-text";
 
 export const Demo = () => {
     return (
-        <DistortText className="font-mono text-2xl">
+        <DistortText className="font-mono sm:text-xl xl:text-2xl">
             <p>
                 Step into a world where text bends to your will. With each hover, the words twist and unravel, only to
                 seamlessly return to their original form, creating an ever-evolving dance of letters and meaning.

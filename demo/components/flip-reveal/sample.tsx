@@ -9,8 +9,12 @@ export const Demo = () => {
     const [key, setKey] = useState("all");
 
     return (
-        <div className="flex min-h-100 flex-col items-center gap-8">
-            <ToggleGroup type="single" className="rounded-md border p-1" value={key} onValueChange={(e) => setKey(e)}>
+        <div className="flex min-h-100 flex-col items-center gap-6 sm:gap-8">
+            <ToggleGroup
+                type="single"
+                className="bg-background rounded-md border p-1"
+                value={key}
+                onValueChange={(e) => setKey(e)}>
                 <ToggleGroupItem value="all" className="px-4">
                     All
                 </ToggleGroupItem>

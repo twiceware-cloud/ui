@@ -19,10 +19,14 @@ export const createPaginationPair = ({
     if (currentIndex === -1) return pagerPair;
 
     if (pagerPair.prev == null) {
-        if (currentIndex > 0) {
+        let prev = flatSections[currentIndex - 1];
+        if (prev?.isLabel) {
+            prev = flatSections[currentIndex - 2];
+        }
+        if (prev) {
             pagerPair.prev = {
-                title: flatSections[currentIndex - 1].title,
-                href: flatSections[currentIndex - 1].href ?? "#",
+                title: prev.title,
+                href: prev.href ?? "#",
             };
         } else {
             pagerPair.prev = defaultPagerPair?.prev;
@@ -30,10 +34,14 @@ export const createPaginationPair = ({
     }
 
     if (pagerPair.next == null) {
-        if (currentIndex < flatSections.length - 1) {
+        let next = flatSections[currentIndex + 1];
+        if (next?.isLabel) {
+            next = flatSections[currentIndex + 2];
+        }
+        if (next) {
             pagerPair.next = {
-                title: flatSections[currentIndex + 1].title,
-                href: flatSections[currentIndex + 1].href ?? "#",
+                title: next.title,
+                href: next.href ?? "#",
             };
         } else {
             pagerPair.next = defaultPagerPair?.next;

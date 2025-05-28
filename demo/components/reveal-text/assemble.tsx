@@ -13,7 +13,7 @@ export const Demo = () => {
                 },
                 ease: "power3.out",
             }}>
-            <p className="text-center text-3xl font-medium">Animate your text with style</p>
+            <p className="text-center text-lg font-medium sm:text-2xl xl:text-3xl">Animate your text with style</p>
             <p className="text-center text-sm">Smooth, expressive transitions for any part of your content</p>
         </RevealText>
     );

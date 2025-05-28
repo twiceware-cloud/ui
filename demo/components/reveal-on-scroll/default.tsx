@@ -13,10 +13,10 @@ export const Demo = ({ ...props }) => {
                 <div className="flex justify-center gap-8 max-sm:flex-col">
                     <img
                         src="https://images.unsplash.com/photo-1532456745301-b2c645d8b80d"
-                        className="h-80 min-w-80 rounded object-cover"
+                        className="h-80 min-w-40 rounded object-cover sm:min-w-60 lg:min-w-80"
                         alt="Image"
                     />
-                    <div className="flex flex-col">
+                    <div className="flex grow flex-col">
                         <p className="text-muted-foreground font-mono text-xs font-medium tracking-wider uppercase">
                             Scroll Trigger
                         </p>
