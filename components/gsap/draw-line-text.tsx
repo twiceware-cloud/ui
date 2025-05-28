@@ -1,13 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { ComponentProps, useRef, useState } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 type DrawTextProps = {
     afterFill?: boolean;
-    className?: string;
     color?: string;
     fontSize?: number;
     letterSpacing?: number;
@@ -15,11 +14,10 @@ type DrawTextProps = {
     strokeWidth?: number;
     text: string;
     wordSpacing?: number;
-};
+} & ComponentProps<"svg">;
 
 export const DrawLineText = ({
     text,
-    className,
     oneByOne = true,
     afterFill = true,
     color = "black",
@@ -27,6 +25,7 @@ export const DrawLineText = ({
     wordSpacing = 10,
     strokeWidth = 1,
     letterSpacing = 0,
+    ...props
 }: DrawTextProps) => {
     const wrapperRef = useRef<SVGSVGElement | null>(null);
 
@@ -81,13 +80,13 @@ export const DrawLineText = ({
 
     return (
         <svg
+            {...props}
             ref={wrapperRef}
             style={{
                 userSelect: "none",
                 width: textDimension.width + "px",
                 height: textDimension.height * 1.03 + "px",
-            }}
-            className={className}>
+            }}>
             {text.split("").map((char, i) => (
                 <text
                     key={i}

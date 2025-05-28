@@ -1,15 +1,14 @@
 "use client";
 
-import * as React from "react";
-import { useRef } from "react";
+import { ComponentProps, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-type SpringButtonProps = React.ComponentProps<"button"> & {
+type SpringButtonProps = {
     scale?: number;
     shaking?: boolean;
-};
+} & ComponentProps<"button">;
 
 export const SpringButton = ({ scale = 0.85, shaking = true, ...props }: SpringButtonProps) => {
     const buttonRef = useRef<HTMLButtonElement | null>(null);

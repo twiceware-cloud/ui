@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { ComponentProps, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -12,11 +12,9 @@ type EffectType = "scale" | "slideInRight" | "blur" | "random";
 
 type StaggerOnScrollProps = {
     effect?: EffectType;
-    className?: string;
-    children: ReactNode;
-};
+} & ComponentProps<"div">;
 
-export const StaggerOnScroll = ({ children, className, effect = "scale" }: StaggerOnScrollProps) => {
+export const StaggerOnScroll = ({ effect = "scale", ...props }: StaggerOnScrollProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     useGSAP(
@@ -67,9 +65,5 @@ export const StaggerOnScroll = ({ children, className, effect = "scale" }: Stagg
         { scope: wrapperRef, dependencies: [effect] },
     );
 
-    return (
-        <div ref={wrapperRef} className={className}>
-            {children}
-        </div>
-    );
+    return <div {...props} ref={wrapperRef} />;
 };

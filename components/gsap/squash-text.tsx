@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useId, useRef } from "react";
+import { ComponentProps, useId, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -11,12 +11,10 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(CustomEase, CustomBounce, SplitText);
 
 type SquashTextProps = {
-    className?: string;
-    children: ReactNode;
     repeat?: boolean | number;
-};
+} & ComponentProps<"div">;
 
-export const SquashText = ({ children, className, repeat = true }: SquashTextProps) => {
+export const SquashText = ({ repeat = true, ...props }: SquashTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const bounceId = useId();
     const squashEase = `squash-${bounceId}`;
@@ -70,9 +68,5 @@ export const SquashText = ({ children, className, repeat = true }: SquashTextPro
         { scope: wrapperRef },
     );
 
-    return (
-        <div style={{ display: "flex" }} ref={wrapperRef} className={className}>
-            <p>{children}</p>
-        </div>
-    );
+    return <div {...props} ref={wrapperRef} />;
 };

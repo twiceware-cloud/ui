@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { ComponentProps, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -11,11 +11,10 @@ gsap.registerPlugin(ScrollTrigger);
 type EffectType = "fadeIn" | "slideInRight" | "zoomIn" | "blurIn";
 
 type RevealOnScrollProps = {
-    children: ReactNode;
     effect?: EffectType;
-};
+} & ComponentProps<"div">;
 
-export const RevealOnScroll = ({ children, effect = "fadeIn" }: RevealOnScrollProps) => {
+export const RevealOnScroll = ({ effect = "fadeIn", ...props }: RevealOnScrollProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const animationRef = useRef<gsap.core.Tween | null>(null);
 
@@ -105,5 +104,5 @@ export const RevealOnScroll = ({ children, effect = "fadeIn" }: RevealOnScrollPr
         { scope: wrapperRef, dependencies: [effect] },
     );
 
-    return <div ref={wrapperRef}>{children}</div>;
+    return <div {...props} ref={wrapperRef} />;
 };

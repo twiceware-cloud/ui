@@ -1,9 +1,11 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { ComponentProps, ReactNode, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+
+import { cn } from "@/lib/utils";
 
 type MouseWaveTextProps = {
     children: ReactNode;
@@ -11,7 +13,7 @@ type MouseWaveTextProps = {
     shadowClassName?: string;
     textClassName?: string;
     wrapperTweenVars?: gsap.TweenVars;
-};
+} & ComponentProps<"div">;
 
 export const MouseWaveText = ({
     children,
@@ -19,6 +21,7 @@ export const MouseWaveText = ({
     className,
     shadowClassName,
     wrapperTweenVars,
+    ...props
 }: MouseWaveTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const textRef = useRef<HTMLParagraphElement | null>(null);
@@ -120,11 +123,11 @@ export const MouseWaveText = ({
     );
 
     return (
-        <div ref={wrapperRef} style={{ whiteSpace: "nowrap" }} className={className}>
+        <div {...props} ref={wrapperRef} className={cn("whitespace-nowrap", className)}>
             <p ref={shadowRef} className={shadowClassName}>
                 {children}
             </p>
-            <p ref={textRef} aria-disabled="true" className={textClassName}></p>
+            <p ref={textRef} aria-disabled="true" className={textClassName} />
         </div>
     );
 };

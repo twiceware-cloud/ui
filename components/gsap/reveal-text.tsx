@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useMemo, useRef } from "react";
+import { ComponentProps, useMemo, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -10,11 +10,9 @@ type SplitType = "chars" | "words" | "lines";
 
 type RevealTextProps = {
     type?: SplitType;
-    className?: string;
     gsapVars?: gsap.TweenVars;
     splitTextVars?: Partial<SplitText.Vars>;
-    children: ReactNode;
-};
+} & ComponentProps<"div">;
 
 const defaultGsapVars: Record<SplitType, gsap.TweenVars> = {
     chars: {
@@ -42,13 +40,7 @@ const defaultGsapVars: Record<SplitType, gsap.TweenVars> = {
     },
 };
 
-export const RevealText = ({
-    children,
-    type = "chars",
-    className,
-    gsapVars = {},
-    splitTextVars = {},
-}: RevealTextProps) => {
+export const RevealText = ({ type = "chars", gsapVars = {}, splitTextVars = {}, ...props }: RevealTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     const splitType = useMemo(
@@ -75,9 +67,5 @@ export const RevealText = ({
         { scope: wrapperRef },
     );
 
-    return (
-        <div ref={wrapperRef} className={className}>
-            {children}
-        </div>
-    );
+    return <div {...props} ref={wrapperRef} />;
 };

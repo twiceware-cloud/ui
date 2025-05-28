@@ -1,19 +1,17 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { ComponentProps, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 
 type BouncingTextProps = {
-    className?: string;
     repeat?: boolean | number;
-    children: ReactNode;
-};
+} & ComponentProps<"p">;
 
-export const BouncingText = ({ children, repeat = true, className }: BouncingTextProps) => {
-    const textRef = useRef<HTMLDivElement | null>(null);
+export const BouncingText = ({ repeat = true, ...props }: BouncingTextProps) => {
+    const textRef = useRef<HTMLParagraphElement | null>(null);
 
     useGSAP(
         () => {
@@ -52,9 +50,5 @@ export const BouncingText = ({ children, repeat = true, className }: BouncingTex
         { scope: textRef },
     );
 
-    return (
-        <p ref={textRef} className={className}>
-            {children}
-        </p>
-    );
+    return <p {...props} ref={textRef} />;
 };

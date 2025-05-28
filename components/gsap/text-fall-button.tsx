@@ -1,16 +1,16 @@
 "use client";
 
-import { ComponentProps, MouseEvent, ReactNode, useEffect, useRef } from "react";
+import { ComponentProps, MouseEvent, useEffect, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 
+import { cn } from "@/lib/utils";
+
 gsap.registerPlugin(SplitText);
 
 type TextFallButtonProps = {
-    className?: string;
-    children?: ReactNode;
     effectOnHover?: boolean;
     effectOnLoad?: boolean;
 } & ComponentProps<"button">;
@@ -81,9 +81,7 @@ export const TextFallButton = ({
 
     const onClick = (e: MouseEvent<HTMLButtonElement>) => {
         triggerTextFallEffect();
-        if (props.onClick) {
-            props.onClick(e);
-        }
+        props.onClick?.(e);
     };
 
     return (
@@ -92,12 +90,11 @@ export const TextFallButton = ({
             ref={buttonRef}
             onMouseEnter={() => effectOnHover && triggerTextFallEffect()}
             onClick={onClick}
-            style={{ position: "relative", overflow: "hidden" }}
-            className={className}>
-            <span ref={textRef} style={{ position: "absolute" }}>
+            className={cn("", className)}>
+            <span ref={textRef} className="absolute">
                 {children}
             </span>
-            <span style={{ opacity: 0 }}>{children}</span>
+            <span className="opacity-0">{children}</span>
         </button>
     );
 };

@@ -68,5 +68,5 @@ export const FlipReveal = ({ keys, hideClass = "", showClass = "", ...props }: F
         { scope: wrapperRef, dependencies: [keys] },
     );
 
-    return <div ref={wrapperRef} {...props} />;
+    return <div {...props} ref={wrapperRef} />;
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { ComponentProps, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -11,11 +11,9 @@ gsap.registerPlugin(ScrambleTextPlugin);
 
 type DistortTextProps = {
     distortChar?: string;
-    className?: string;
-    children: ReactNode;
-};
+} & ComponentProps<"div">;
 
-export const DistortText = ({ children, distortChar = ".:", className }: DistortTextProps) => {
+export const DistortText = ({ distortChar = ".:", ...props }: DistortTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     useGSAP(
@@ -56,9 +54,5 @@ export const DistortText = ({ children, distortChar = ".:", className }: Distort
         { scope: wrapperRef },
     );
 
-    return (
-        <div ref={wrapperRef} className={className}>
-            {children}
-        </div>
-    );
+    return <div {...props} ref={wrapperRef} />;
 };

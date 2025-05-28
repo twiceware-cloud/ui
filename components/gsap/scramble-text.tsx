@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useRef } from "react";
+import { ComponentProps, useEffect, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -10,14 +10,12 @@ gsap.registerPlugin(ScrambleTextPlugin);
 
 type ScrambleTextProps = {
     random?: boolean;
-    className?: string;
-    children: ReactNode;
     scrambleOnLoad?: boolean;
-};
+} & ComponentProps<"div">;
 
 const defaultChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-export const ScrambleText = ({ children, scrambleOnLoad = true, random = true, className }: ScrambleTextProps) => {
+export const ScrambleText = ({ scrambleOnLoad = true, random = true, ...props }: ScrambleTextProps) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     const { contextSafe } = useGSAP();
@@ -43,9 +41,5 @@ export const ScrambleText = ({ children, scrambleOnLoad = true, random = true, c
         return () => target?.removeEventListener("pointerenter", scramble);
     }, [wrapperRef, scramble, scrambleOnLoad]);
 
-    return (
-        <div ref={wrapperRef} className={className}>
-            {children}
-        </div>
-    );
+    return <div {...props} ref={wrapperRef} />;
 };
