@@ -51,7 +51,7 @@ export const Sidebar = ({ items, className }: SidebarProps) => {
 
     return (
         <div className={cn("flex h-full flex-col", className)}>
-            <Link href={routes.landing} className="flex min-h-15 items-center border-b border-dashed px-5">
+            <Link href={routes.landing} className="flex min-h-16 items-center border-b border-dashed px-5">
                 <Logo />
             </Link>
             <ScrollArea className="relative min-h-0 grow px-5">

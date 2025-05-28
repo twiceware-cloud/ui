@@ -24,7 +24,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const page = blocks.find((block) => block.path === url);
 
     return {
-        title: page?.title,
+        title: page?.title + " - Blocks",
         description: page?.description,
     };
 }

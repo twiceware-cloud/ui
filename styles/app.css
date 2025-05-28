@@ -1,4 +1,5 @@
 @import "./tailwind.css";
 @import "./docs.css";
+@import "./landing.css";
 
 @plugin "tailwindcss-animate";

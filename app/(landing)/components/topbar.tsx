@@ -1,96 +1,29 @@
 "use client";
 
-import { MenuIcon, MilestoneIcon } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { ClassNameValue } from "tailwind-merge";
-import { Drawer } from "vaul";
 
-import { Sidebar, SidebarNavItem } from "@/components/docs/layouts";
 import { Logo } from "@/components/docs/logo";
+import { ThemeModeToggle } from "@/components/docs/theme-mode-toggle";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/docs";
 import { cn } from "@/lib/utils";
 
-import { ThemeModeToggle } from "../theme-mode-toggle";
-
-type TopbarProps = {
-    menuItems?: SidebarNavItem[];
-    className?: ClassNameValue;
-    showLogo?: boolean;
-};
-
-export const Topbar = ({ menuItems = [], className, showLogo = false }: TopbarProps) => {
-    const [openDrawer, setOpenDrawer] = useState(false);
-    const pathname = usePathname();
-
-    useEffect(() => {
-        setOpenDrawer(false);
-    }, [pathname]);
-
-    const items: SidebarNavItem[] = [
-        {
-            title: "Navigation",
-            icon: <MilestoneIcon />,
-            expanded: true,
-            items: [
-                {
-                    title: "Components",
-                    href: routes.docs.components.home,
-                },
-                {
-                    title: "Blocks",
-                    href: routes.blocks.base,
-                },
-            ],
-        },
-        ...menuItems,
-    ];
-
+export const Topbar = () => {
     return (
-        <div
-            className={cn(
-                "bg-background/80 dark:bg-background/90 sticky top-0 z-10 h-16 border-b border-dashed",
-                className,
-            )}>
+        <div className={cn("bg-background/80 dark:bg-background/90 sticky top-0 z-10 h-16")}>
             <div className="flex h-full items-center justify-between border-dashed backdrop-blur-sm">
                 <div className="flex items-center gap-2 md:gap-8">
-                    <Drawer.Root direction="left" open={openDrawer} onOpenChange={setOpenDrawer}>
-                        <Drawer.Trigger asChild>
-                            <Button
-                                variant="ghost"
-                                size="icon"
-                                className="cursor-pointer md:hidden"
-                                aria-label="Leftmenu toggle">
-                                <MenuIcon className="!size-5" />
-                            </Button>
-                        </Drawer.Trigger>
-                        <Drawer.Portal>
-                            <Drawer.Overlay className="fixed inset-0 z-10 bg-black/40" />
-                            <Drawer.Content className="fixed start-2 top-2 bottom-2 z-10 outline-none">
-                                <Drawer.Title hidden>Hidden</Drawer.Title>
-                                <Sidebar items={items} className="bg-background w-64 rounded" />
-                            </Drawer.Content>
-                        </Drawer.Portal>
-                    </Drawer.Root>
-                    {showLogo && (
-                        <Link href={routes.landing} className="max-md:hidden">
-                            <Logo />
-                        </Link>
-                    )}
+                    <Link href={routes.landing} className="max-md:hidden">
+                        <Logo />
+                    </Link>
                     <div className="hidden gap-2 md:inline-flex md:gap-6">
                         <Link
-                            className={cn("text-foreground/80 hover:text-foreground text-[15px] transition-all", {
-                                "text-foreground font-medium": pathname.includes("docs"),
-                            })}
+                            className={cn("text-foreground/80 hover:text-foreground text-[15px] transition-all")}
                             href={routes.docs.components.home}>
                             Components
                         </Link>
                         <Link
-                            className={cn("text-foreground/80 hover:text-foreground text-[15px] transition-all", {
-                                "text-foreground font-medium": pathname.includes("blocks"),
-                            })}
+                            className={cn("text-foreground/80 hover:text-foreground text-[15px] transition-all")}
                             href={routes.blocks.base}>
                             Blocks
                         </Link>

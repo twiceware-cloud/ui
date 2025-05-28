@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
@@ -5,14 +6,20 @@ import { Card } from "@/components/ui/card";
 
 import { blockSections } from "./menu";
 
+export const metadata: Metadata = {
+    title: "Blocks",
+    description:
+        "Beautiful, interactive, and production-ready sections you can drop into your project with a single shadcn command.",
+};
+
 export default async function Page() {
     return (
         <div className="">
             <div className="flex flex-col items-center justify-center">
                 <h1 className="text-3xl font-semibold lg:text-4xl 2xl:text-5xl">Blocks</h1>
                 <p className="text-muted-foreground mt-1 max-w-xl text-center max-sm:text-sm">
-                    Beautiful, responsive, and production ready sections you can instantly add to your React project
-                    with one shadcn command.
+                    Beautiful, interactive, and production-ready sections you can drop into your project with a single
+                    shadcn command.
                 </p>
             </div>
             <div className="mt-8 sm:mt-12 xl:mt-16">
