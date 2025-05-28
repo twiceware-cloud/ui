@@ -9,10 +9,10 @@ interface PageProps {
 export default async function ExamplePage(props: PageProps) {
     try {
         const path = ((await props.params).slug ?? []).join("/");
-        const Component = await import(`@/demo/${path.replace(/^demo\//, "")}`).then((e) => e.Demo);
+        const Component = await import(`@/demo/${path.replace(/^demo\//, "")}`).then((e) => e.default);
         return Component ? <Component /> : notFound();
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
+        console.error(e);
         notFound();
     }
 }

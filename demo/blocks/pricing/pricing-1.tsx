@@ -4,7 +4,7 @@ import { SpringButton } from "@/components/gsap/spring-button";
 import { StaggerOnScroll } from "@/components/gsap/stagger-on-scroll";
 import { Button } from "@/components/ui/button";
 
-export const Demo = () => {
+const Pricing1 = () => {
     return (
         <div className="bg-background container py-6 sm:py-12 lg:py-24">
             <div className="flex flex-col items-center">
@@ -120,3 +120,5 @@ export const Demo = () => {
         </div>
     );
 };
+
+export default Pricing1;

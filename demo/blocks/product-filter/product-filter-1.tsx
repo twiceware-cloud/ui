@@ -134,7 +134,7 @@ const products: IProduct[] = [
 
 const categories = [...new Set(products.map((item) => item.category))];
 
-export const Demo = () => {
+const ProductFilter1 = () => {
     const [filter, setFilter] = useState({
         search: "",
         category: "",
@@ -197,9 +197,9 @@ export const Demo = () => {
                     </Select>
                 </div>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 lg:mt-6">
                 <div className="flex items-center justify-between gap-2 max-sm:text-sm">
-                    <span className="text-muted-foreground font-medium">Here’s What We Found</span>
+                    <span className="">Here’s What We Found...</span>
                     {visibleProductKeys[0] !== "all" && (
                         <button
                             className="text-muted-foreground hover:text-foreground flex cursor-pointer items-center gap-1.5"
@@ -258,3 +258,5 @@ export const Demo = () => {
         </div>
     );
 };
+
+export default ProductFilter1;

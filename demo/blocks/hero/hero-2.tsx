@@ -4,7 +4,7 @@ import { RevealText } from "@/components/gsap/reveal-text";
 import { SpringButton } from "@/components/gsap/spring-button";
 import { TextFallButton } from "@/components/gsap/text-fall-button";
 
-export const Demo = () => {
+const Hero2 = () => {
     return (
         <div className="bg-background overflow-hidden pt-8 sm:pt-16 lg:pt-24">
             <div className="container">
@@ -23,7 +23,7 @@ export const Demo = () => {
                         Create, organize, and move forward with tools designed for clarity, flow, and real results
                         across your everyday work.
                     </p>
-                    <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-8">
+                    <div className="mt-6 flex items-center gap-3 max-sm:flex-col sm:mt-8">
                         <SpringButton
                             shaking={false}
                             className="flex cursor-pointer items-center gap-2 rounded-full border px-4 py-2 font-medium shadow-none">
@@ -82,3 +82,5 @@ export const Demo = () => {
         </div>
     );
 };
+
+export default Hero2;

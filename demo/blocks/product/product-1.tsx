@@ -10,7 +10,7 @@ import { SpringButton } from "@/components/gsap/spring-button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
-export const Demo = () => {
+const Product1 = () => {
     const [infoVisible, setInfoVisible] = useState(false);
     const contentRef = useRef<HTMLDivElement>(null);
 
@@ -199,3 +199,5 @@ export const Demo = () => {
         </div>
     );
 };
+
+export default Product1;

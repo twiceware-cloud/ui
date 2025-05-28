@@ -5,7 +5,7 @@ import { SpringButton } from "@/components/gsap/spring-button";
 import { TextFallButton } from "@/components/gsap/text-fall-button";
 import { TiltCard } from "@/components/gsap/tilt-card";
 
-export const Demo = () => {
+const Hero1 = () => {
     return (
         <div className="container overflow-hidden p-4 sm:p-6 lg:p-12 xl:p-24">
             <div className="grid h-full grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-16">
@@ -73,3 +73,5 @@ export const Demo = () => {
         </div>
     );
 };
+
+export default Hero1;
