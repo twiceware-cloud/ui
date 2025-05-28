@@ -6,6 +6,7 @@ import * as runtime from "react/jsx-runtime";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 
+import { BlockPreview } from "./block-preview";
 import { Callout } from "./callout";
 import { CodePreview } from "./code-preview";
 import { DemoCodePreview } from "./demo-code-preview";
@@ -89,6 +90,7 @@ const sharedComponents = {
     TabsList,
     TabsTrigger,
     TabsContent,
+    BlockPreview,
 };
 
 const useMDXComponent = (code: string) => {

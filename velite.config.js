@@ -33,10 +33,24 @@ const docs = defineCollection({
     }),
 });
 
+const blocks = defineCollection({
+    name: "Block",
+    pattern: "blocks/**/*.mdx",
+    schema: s.object({
+        slug: s.slug("blocks"),
+        path: s.path(),
+        title: s.string().max(99),
+        description: s.string().max(100),
+        code: s.mdx(),
+        toc: s.toc(),
+    }),
+});
+
 export default defineConfig({
     root: join(process.cwd(), "./content/"),
     collections: {
         docs,
+        blocks,
     },
     mdx: {
         rehypePlugins: [
