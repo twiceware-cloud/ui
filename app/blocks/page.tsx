@@ -16,7 +16,9 @@ export default async function Page() {
     return (
         <div className="">
             <div className="flex flex-col items-center justify-center">
-                <h1 className="text-3xl font-semibold lg:text-4xl 2xl:text-5xl">Blocks</h1>
+                <p className="from-foreground to-foreground/60 w-fit bg-linear-to-r bg-clip-text text-3xl font-[650] tracking-tight text-transparent lg:text-4xl 2xl:text-5xl">
+                    Blocks
+                </p>
                 <p className="text-muted-foreground mt-1 max-w-xl text-center max-sm:text-sm">
                     Beautiful, interactive, and production-ready sections you can drop into your project with a single
                     shadcn command.

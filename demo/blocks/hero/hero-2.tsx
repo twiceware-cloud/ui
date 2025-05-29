@@ -69,9 +69,9 @@ const Hero2 = () => {
                 </div>
             </div>
 
-            <div className="bg-foreground/5 -mt-24 pt-36 pb-24">
-                <p className="text-muted-foreground text-center text-lg font-medium">Used by top companies</p>
-                <div className="*: container mt-4 flex items-center justify-around gap-5 *:opacity-50 *:brightness-0 *:transition-all *:hover:opacity-100 *:hover:brightness-100 lg:mt-8 *:not-hover:dark:invert">
+            <div className="bg-foreground/2 -mt-24 pt-36 pb-24">
+                <p className="text-foreground/70 text-center text-lg font-medium">Used by top companies</p>
+                <div className="*: container mt-4 flex items-center justify-around gap-5 *:opacity-40 *:brightness-0 *:transition-all *:duration-300 *:hover:opacity-100 *:hover:brightness-100 lg:mt-8 *:not-hover:dark:invert">
                     <img src="/images/companies/loom.png" className="h-8" alt="Company Image" />
                     <img src="/images/companies/notion.png" className="h-9" alt="Company Image" />
                     <img src="/images/companies/slack.png" className="h-8 max-sm:hidden" alt="Company Image" />

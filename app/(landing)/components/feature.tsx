@@ -32,7 +32,7 @@ const features: Feature[] = [
 ];
 export const Feature = () => {
     return (
-        <div className="my-16 gap-16 2xl:my-36">
+        <div className="my-16 gap-16 overflow-hidden 2xl:my-36">
             <RevealOnScroll effect="slideInRight" className="grid grid-cols-4 gap-6">
                 {features.map(({ icon: Icon, description, title }, index) => (
                     <div key={index} className="rounded border p-5">
