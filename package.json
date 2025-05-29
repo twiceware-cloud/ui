@@ -1,6 +1,6 @@
 {
     "name": "paceui",
-    "description": "A growing collection of animated components built with GSAP, ready to use in any React or Next.js project. You can copy them, paste them, and make them your own",
+    "description": "Animated components and building blocks built for smooth interaction and\n\nrich detail. Copy, customise, and create without the extra setup.",
     "version": "0.0.1",
     "private": true,
     "license": "MIT",

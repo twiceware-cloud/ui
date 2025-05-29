@@ -16,7 +16,11 @@ export default async function Page() {
     return (
         <div className="">
             <div className="flex flex-col items-center justify-center">
-                <p className="from-foreground to-foreground/60 w-fit bg-linear-to-r bg-clip-text text-3xl font-[650] tracking-tight text-transparent lg:text-4xl 2xl:text-5xl">
+                <div className="flex items-center gap-2 rounded-full border px-3 py-0.5 text-sm font-medium">
+                    <div className="size-1.5 rounded-full bg-green-500"></div>
+                    Live
+                </div>
+                <p className="from-foreground to-foreground/60 mt-2 w-fit bg-linear-to-r bg-clip-text text-3xl font-[650] tracking-tight text-transparent lg:text-4xl 2xl:text-5xl">
                     Blocks
                 </p>
                 <p className="text-muted-foreground mt-1 max-w-xl text-center max-sm:text-sm">

@@ -1,6 +1,4 @@
-import { ActivityIcon, LayersIcon, LucideIcon, PackageIcon, ZapIcon } from "lucide-react";
-
-import { RevealOnScroll } from "@/components/gsap/reveal-on-scroll";
+import { LayersIcon, LucideIcon, PackageIcon, ZapIcon } from "lucide-react";
 
 type Feature = {
     title: string;
@@ -10,38 +8,36 @@ type Feature = {
 
 const features: Feature[] = [
     {
-        title: "Built for real interaction",
-        description: "Each component adds subtle polished movement that feels purposeful not flashy",
-        icon: ActivityIcon,
+        title: "Built-in Animation",
+        description: "Smooth natural transitions by default, powered by GSAP for reliable and fluid performance.",
+        icon: ZapIcon,
     },
     {
-        title: "Drop in scale fast",
-        description: "Install with one shadcn command and use across any project instantly",
+        title: "Instant Setup",
+        description:
+            "Start fast with shadcn CLI and Tailwind CSS. No config needed, just run the command and build instantly.",
         icon: PackageIcon,
     },
     {
-        title: "Zero setup",
-        description: "Text reveals bouncy titles springy buttons ready to use no configuration needed",
+        title: "Adaptive Design",
+        description:
+            "Fits any layout or theme. Customize quickly or use as-is across projects, sections, screen sizes.",
         icon: LayersIcon,
     },
-    {
-        title: "Powered by GSAP",
-        description: "Built on rock-solid animation tech crafted for smooth performance",
-        icon: ZapIcon,
-    },
 ];
+
 export const Feature = () => {
     return (
         <div className="my-16 gap-16 overflow-hidden 2xl:my-36">
-            <RevealOnScroll effect="slideInRight" className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-6">
                 {features.map(({ icon: Icon, description, title }, index) => (
-                    <div key={index} className="rounded border p-5">
+                    <div key={index} className="flex flex-col items-center rounded p-5">
                         <div className="bg-muted inline-flex rounded p-2.5">{<Icon className="size-5.5" />}</div>
                         <p className="mt-2 text-lg font-medium">{title}</p>
-                        <p className="text-foreground/80 mt-1 text-sm">{description}</p>
+                        <p className="text-foreground/80 mt-1 max-w-sm text-center text-sm">{description}</p>
                     </div>
                 ))}
-            </RevealOnScroll>
+            </div>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import { Link2Icon, MailIcon } from "lucide-react";
+import { Link2Icon, PencilIcon } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -83,29 +83,15 @@ export default async function Page(props: PageProps) {
             </div>
             <div className="sticky top-24 hidden h-full w-52 min-w-52 xl:block">
                 <TableOfContent entries={page.toc} />
-                <div className="mt-4">
-                    <p className="text-foreground/80 text-sm font-medium">Join us</p>
-                    <div className="mt-2 space-y-1.5 text-sm">
+                <div className="mt-6 text-sm">
+                    <p className="font-medium">Contribute</p>
+                    <div className="mt-2 space-y-1.5">
                         <Link
-                            href={routes.externalLinks.twitter}
+                            href={`https://github.com/paceui/paceui/blob/main/content/${url}.mdx`}
                             target="_blank"
-                            className="text-foreground/80 hover:text-foreground flex items-center gap-2 transition-all">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="size-4"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                viewBox="0 0 16 16">
-                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
-                            </svg>
-                            Twitter
-                        </Link>
-                        <Link
-                            href={routes.landing}
-                            className="text-foreground/80 hover:text-foreground flex items-center gap-2 transition-all">
-                            <MailIcon className="size-4" />
-                            Subscribe
+                            className="text-foreground/70 hover:text-foreground flex items-center gap-2 transition-all">
+                            <PencilIcon className="size-4" />
+                            Edit this page
                         </Link>
                     </div>
                 </div>

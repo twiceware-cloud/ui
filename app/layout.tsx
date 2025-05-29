@@ -11,13 +11,15 @@ import "@/styles/app.css";
 export const metadata: Metadata = {
     title: {
         template: "%s | PaceUI",
-        default: "PaceUI – GSAP Animated Components for the React Ecosystem",
+        default: "PaceUI – Animated Components and Blocks for React Ecosystem",
     },
     description:
-        "Bring your UI to life with GSAP-powered components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
+        "Animated components and building blocks built for smooth interaction and  rich detail. Copy, customise, and create without the extra setup.",
 
     keywords: [
         "tailwind",
+        "tailwindcss",
+        "shadcn",
         "next.js",
         "react",
         "animations",
@@ -49,9 +51,9 @@ export const metadata: Metadata = {
         ],
     },
     openGraph: {
-        title: "PaceUI – GSAP Animated Components for the React Ecosystem",
+        title: "PaceUI – Animated Components and Blocks for React Ecosystem",
         description:
-            "Bring your UI to life with GSAP-powered components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
+            "Animated components and building blocks built for smooth interaction and  rich detail. Copy, customise, and create without the extra setup.",
         url: "https://paceui.com",
         siteName: "PaceUI",
         images: [
@@ -63,9 +65,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "PaceUI – GSAP Animated Components for the React Ecosystem",
+        title: "PaceUI – Animated Components and Blocks for React Ecosystem",
         description:
-            "Bring your UI to life with GSAP-powered components. PaceUI offers clean, animated UI blocks ready to drop into any React, Next.js, or React-based project.",
+            "Animated components and building blocks built for smooth interaction and  rich detail. Copy, customise, and create without the extra setup.",
     },
     alternates: {
         canonical: "https://paceui.com",

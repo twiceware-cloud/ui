@@ -11,7 +11,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Sidebar items={docsSidebarNavItems} className="border-s border-e border-dashed" />
             </div>
             <div className="min-w-0 grow">
-                <Topbar menuItems={docsSidebarNavItems} className="pe-4 max-xl:px-6 max-sm:px-4 xl:ps-8 2xl:ps-12" />
+                <Topbar
+                    menuItems={docsSidebarNavItems}
+                    className="border-b border-dashed pe-4 max-xl:px-6 max-sm:px-4 xl:ps-8 2xl:ps-12"
+                />
                 <div className="mt-4 max-xl:px-6 max-sm:px-4 xl:mt-8 xl:ps-8 2xl:ps-12">{children}</div>
                 <Footer className="pe-4 max-xl:px-6 max-sm:px-4 xl:ps-8 2xl:ps-12" />
             </div>

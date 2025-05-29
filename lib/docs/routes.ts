@@ -6,7 +6,7 @@ export const routes = {
         theme: "/docs/theme",
         components: {
             base: "/docs/components",
-            home: "/docs/components/bouncing-text",
+            home: "/docs/components/flip-reveal",
         },
     },
     blocks: {
@@ -15,7 +15,7 @@ export const routes = {
     },
     externalLinks: {
         github: "https://github.com/paceui/paceui",
-        discord: "https://discord.gg/RS2fj5CqAM",
+        discord: "https://discord.com/invite/RS2fj5CqAM",
         twitter: "https://x.com/paceui_",
     },
 };
