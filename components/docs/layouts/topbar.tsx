@@ -50,69 +50,72 @@ export const Topbar = ({ menuItems = [], className, showLogo = false }: TopbarPr
     ];
 
     return (
-        <div className={cn("bg-background/80 dark:bg-background/90 sticky top-0 z-10 h-16", className)}>
-            <div className="flex h-full items-center justify-between border-dashed backdrop-blur-sm">
-                <div className="flex items-center gap-2 md:gap-8">
-                    <Drawer.Root direction="left" open={openDrawer} onOpenChange={setOpenDrawer}>
-                        <Drawer.Trigger asChild>
-                            <Button
-                                variant="ghost"
-                                size="icon"
-                                className="cursor-pointer md:hidden"
-                                aria-label="Leftmenu toggle">
-                                <MenuIcon className="!size-5" />
-                            </Button>
-                        </Drawer.Trigger>
-                        <Drawer.Portal>
-                            <Drawer.Overlay className="fixed inset-0 z-10 bg-black/40" />
-                            <Drawer.Content className="fixed start-2 top-2 bottom-2 z-10 outline-none">
-                                <Drawer.Title hidden>Hidden</Drawer.Title>
-                                <Sidebar items={items} className="bg-background w-64 rounded" />
-                            </Drawer.Content>
-                        </Drawer.Portal>
-                    </Drawer.Root>
-                    {showLogo && (
-                        <Link href={routes.landing} className="max-md:hidden">
-                            <Logo />
-                        </Link>
-                    )}
-                    <div className="hidden gap-2 md:inline-flex md:gap-6">
-                        <Link
-                            className={cn("text-foreground/80 hover:text-foreground text-[15px] transition-all", {
-                                "text-foreground font-medium": pathname.includes("docs"),
-                            })}
-                            href={routes.docs.components.home}>
-                            Components
-                        </Link>
-                        <Link
-                            className="text-foreground/80 hover:text-foreground flex items-center gap-1.5 text-[15px] transition-all"
-                            href={routes.blocks.base}>
-                            Blocks
-                            <div className="rounded-full border px-1.5 py-0.5 text-xs/none font-medium shadow-xs">
-                                New
-                            </div>
-                        </Link>
-                    </div>
+        <div className={cn("flex h-full items-center justify-between", className)}>
+            <div className="flex items-center gap-2 md:gap-8">
+                <Drawer.Root direction="left" open={openDrawer} onOpenChange={setOpenDrawer}>
+                    <Drawer.Trigger asChild>
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            className="cursor-pointer md:hidden"
+                            aria-label="Leftmenu toggle">
+                            <MenuIcon className="!size-5" />
+                        </Button>
+                    </Drawer.Trigger>
+                    <Drawer.Portal>
+                        <Drawer.Overlay className="fixed inset-0 z-10 bg-black/40" />
+                        <Drawer.Content className="fixed start-2 top-2 bottom-2 z-10 outline-none">
+                            <Drawer.Title hidden>Hidden</Drawer.Title>
+                            <Sidebar items={items} className="bg-background w-64 rounded" />
+                        </Drawer.Content>
+                    </Drawer.Portal>
+                </Drawer.Root>
+                {showLogo && (
+                    <Link href={routes.landing} className="max-md:hidden">
+                        <Logo />
+                    </Link>
+                )}
+                <div className="hidden gap-2 md:inline-flex md:gap-6">
+                    <Link
+                        className={cn("text-foreground/80 hover:text-foreground text-[15px] transition-all", {
+                            "text-foreground font-medium": pathname.includes("docs"),
+                        })}
+                        href={routes.docs.components.home}>
+                        Components
+                    </Link>
+                    <Link
+                        className={cn(
+                            "text-foreground/80 hover:text-foreground flex items-center gap-1.5 text-[15px] transition-all",
+                            {
+                                "text-foreground font-medium": pathname.includes("blocks"),
+                            },
+                        )}
+                        href={routes.blocks.base}>
+                        Blocks
+                        <div className="bg-secondary text-secondary-foreground rounded-full px-1.5 py-0.5 text-xs/none font-medium shadow-xs">
+                            New
+                        </div>
+                    </Link>
                 </div>
-                <div className="flex items-center">
-                    <Button variant={"ghost"} size="icon" asChild aria-label="Github">
-                        <Link href={routes.externalLinks.twitter} target="_blank">
-                            <TwitterIcon className="!size-4" />
-                        </Link>
-                    </Button>
-                    <Button variant={"ghost"} size="icon" asChild aria-label="Github">
-                        <Link href={routes.externalLinks.discord} target="_blank">
-                            <DiscordIcon className="!size-5" />
-                        </Link>
-                    </Button>
-                    <Button variant={"ghost"} size="icon" asChild aria-label="Github">
-                        <Link href={routes.externalLinks.github} target="_blank">
-                            <GithubIcon className="!size-4.5" />
-                        </Link>
-                    </Button>
+            </div>
+            <div className="flex items-center">
+                <Button variant={"ghost"} size="icon" asChild aria-label="Github">
+                    <Link href={routes.externalLinks.twitter} target="_blank">
+                        <TwitterIcon className="!size-4" />
+                    </Link>
+                </Button>
+                <Button variant={"ghost"} size="icon" asChild aria-label="Github">
+                    <Link href={routes.externalLinks.discord} target="_blank">
+                        <DiscordIcon className="!size-5" />
+                    </Link>
+                </Button>
+                <Button variant={"ghost"} size="icon" asChild aria-label="Github">
+                    <Link href={routes.externalLinks.github} target="_blank">
+                        <GithubIcon className="!size-4.5" />
+                    </Link>
+                </Button>
 
-                    <ThemeModeToggle />
-                </div>
+                <ThemeModeToggle />
             </div>
         </div>
     );

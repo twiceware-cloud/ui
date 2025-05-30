@@ -7,11 +7,11 @@ import { StaggerOnScroll } from "@/components/gsap/stagger-on-scroll";
 const effects = ["scale", "slideInRight", "blur", "random"] as const;
 
 export const StaggerDemo = () => {
-    const [effectIndex, setEffectIndex] = useState(0);
+    const [key, setKey] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setEffectIndex((index) => (index < 3 ? index + 1 : 0));
+            setKey((index) => (index < 3 ? index + 1 : 0));
         }, 4000);
 
         return () => clearInterval(interval);
@@ -20,7 +20,8 @@ export const StaggerDemo = () => {
     return (
         <StaggerOnScroll
             className="grid w-full grid-cols-2 gap-4 md:gap-6 lg:grid-cols-3"
-            effect={effects[effectIndex]}>
+            effect={effects[key % 4]}
+            key={key}>
             {[
                 "https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c",
                 "https://images.unsplash.com/photo-1620987278429-ab178d6eb547",

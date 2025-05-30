@@ -218,7 +218,7 @@ const ProductFilter1 = () => {
                         {products.map((product) => (
                             <FlipRevealItem flipKey={product.sku} key={product.sku}>
                                 <div className="group relative w-full cursor-pointer">
-                                    <div className="bg-secondary absolute -inset-2 scale-50 rounded-md opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100"></div>
+                                    <div className="bg-muted absolute -inset-2 scale-50 rounded-md opacity-0 transition-all group-hover:scale-100 group-hover:opacity-100"></div>
 
                                     <div className="relative">
                                         <div className="relative">
