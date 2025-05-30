@@ -9,6 +9,7 @@
         "name": "Denish Navadiya",
         "url": "https://x.com/withden_"
     },
+    "repository": "https://github.com/paceui/paceui",
     "scripts": {
         "dev": "next dev",
         "build": "next build",

@@ -58,7 +58,7 @@ export const metadata: Metadata = {
         siteName: "PaceUI",
         images: [
             {
-                url: "https://paceui.com/images/og.png",
+                url: "https://paceui.com/images/og.jpg",
                 alt: "PaceUI",
             },
         ],
