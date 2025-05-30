@@ -41,7 +41,7 @@ export default async function Page() {
                                             {item.demo}
                                         </div>
                                         {item.badge && (
-                                            <div className="bg-muted text-muted-foreground absolute end-2 top-2 rounded px-1.5 py-0.5 text-xs font-medium shadow-sm">
+                                            <div className="bg-muted absolute end-2 top-2 rounded border border-dashed px-1.5 py-0.5 text-xs">
                                                 {item.badge == "new" && <p>New</p>}
                                             </div>
                                         )}
@@ -53,9 +53,8 @@ export default async function Page() {
                     </div>
                 ))}
             </div>
-            <div className="mt-4 border-t border-dashed sm:mt-6 xl:mt-8"></div>
             <div>
-                <p className="mt-4 text-lg font-medium">More Blocks</p>
+                <p className="mt-6 text-lg font-medium">More Blocks</p>
                 <Link href={routes.external.twitter} className="mt-4 block max-w-88" target="_blank">
                     <Card className="overflow-hidden rounded border shadow-none">
                         <div className="bg-foreground/3 relative h-44">

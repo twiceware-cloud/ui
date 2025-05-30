@@ -64,7 +64,7 @@ export const Demo = () => {
     return (
         <div className="mt-8 max-md:hidden sm:mt-12 lg:mt-16 xl:mt-24 2xl:mt-32">
             <div className="flex flex-col items-center justify-center">
-                <p className="from-foreground to-foreground/60 w-fit bg-linear-to-r bg-clip-text text-3xl font-[650] tracking-tight text-transparent lg:text-4xl 2xl:text-5xl">
+                <p className="from-foreground to-foreground/65 w-fit bg-linear-to-r bg-clip-text text-3xl font-[650] tracking-tight text-transparent lg:text-4xl 2xl:text-5xl">
                     Demos
                 </p>
                 <p className="text-muted-foreground mt-1 text-center">
