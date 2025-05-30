@@ -62,7 +62,7 @@ export const DemoPreview = ({ path, component, props = [] }: IDemoPreview) => {
     return (
         <div className={cn("relative mt-3 overflow-hidden rounded border")}>
             <div className="absolute inset-0 bg-[url('/images/docs/dots-bg.png')] bg-[length:800px_300px] bg-repeat opacity-4 dark:opacity-6" />
-            <div className="absolute end-3 top-3 z-100 flex items-center gap-2">
+            <div className="absolute end-3 top-3 z-9 flex items-center gap-2">
                 {props.length > 0 && (
                     <Popover>
                         <PopoverTrigger asChild>

@@ -1,9 +1,6 @@
-"use client";
-
 import { ArrowRightIcon, ChevronRightIcon, RocketIcon, ShapesIcon } from "lucide-react";
 import Link from "next/link";
 
-import { ProductDemo } from "@/app/(landing)/components/demos/product-demo";
 import { GithubIcon } from "@/components/docs/icon";
 import { RevealText } from "@/components/gsap/reveal-text";
 import { SpringButton } from "@/components/gsap/spring-button";
@@ -11,6 +8,9 @@ import { TextFallButton } from "@/components/gsap/text-fall-button";
 import { TiltCard } from "@/components/gsap/tilt-card";
 import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/docs";
+
+import { ProductDemo } from "./demos/product-demo";
+import { RevealTextDemo } from "./demos/reveal-text-demo";
 
 export const Hero = () => {
     return (
@@ -46,14 +46,14 @@ export const Hero = () => {
                 </RevealText>
                 <div className="mt-6 flex flex-wrap justify-center gap-4 max-sm:items-center sm:mt-8 xl:mt-12 xl:gap-6 2xl:mt-16">
                     <Button size="lg" asChild className="shadow-primary/20 h-11 gap-2.5 px-6 shadow-xl">
-                        <Link href={routes.docs.components.home}>
+                        <Link href={routes.docs.components.base}>
                             <ShapesIcon className="!size-4.5" />
                             Components
                             <ChevronRightIcon />
                         </Link>
                     </Button>
                     <Button size="lg" variant="outline" asChild className="h-11 gap-2.5 px-6 shadow-xs">
-                        <Link href={routes.externalLinks.github} target="_blank">
+                        <Link href={routes.external.github} target="_blank">
                             <GithubIcon className="!size-4.5" />
                             Star on GitHub
                         </Link>
@@ -109,11 +109,7 @@ export const Hero = () => {
                     </div>
                 </div>
                 <hr className="border-t border-dashed px-20" />
-                <RevealText className="-mt-1">
-                    <p className="text-secondary text-center text-2xl font-semibold text-shadow-lg text-shadow-orange-500/10">
-                        Animate with PaceUI
-                    </p>
-                </RevealText>
+                <RevealTextDemo />
             </div>
         </div>
     );

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { routes } from "@/lib/docs";
 
 import { blockSections } from "./menu";
 
@@ -20,7 +21,7 @@ export default async function Page() {
                     <div className="size-1.5 rounded-full bg-green-500"></div>
                     Live
                 </div>
-                <p className="from-foreground to-foreground/60 mt-2 w-fit bg-linear-to-r bg-clip-text text-3xl font-[650] tracking-tight text-transparent lg:text-4xl 2xl:text-5xl">
+                <p className="from-foreground to-foreground/65 mt-2 w-fit bg-linear-to-r bg-clip-text text-3xl font-[650] tracking-tight text-transparent lg:text-4xl 2xl:text-5xl">
                     Blocks
                 </p>
                 <p className="text-muted-foreground mt-1 max-w-xl text-center max-sm:text-sm">
@@ -55,7 +56,7 @@ export default async function Page() {
             <div className="mt-4 border-t border-dashed sm:mt-6 xl:mt-8"></div>
             <div>
                 <p className="mt-4 text-lg font-medium">More Blocks</p>
-                <Link href="/" className="mt-4 block max-w-88">
+                <Link href={routes.external.twitter} className="mt-4 block max-w-88" target="_blank">
                     <Card className="overflow-hidden rounded border shadow-none">
                         <div className="bg-foreground/3 relative h-44">
                             <Badge className="absolute start-3 top-3">In Development</Badge>

@@ -38,7 +38,7 @@ export const Topbar = ({ menuItems = [], className, showLogo = false }: TopbarPr
             items: [
                 {
                     title: "Components",
-                    href: routes.docs.components.home,
+                    href: routes.docs.components.base,
                 },
                 {
                     title: "Blocks",
@@ -63,8 +63,8 @@ export const Topbar = ({ menuItems = [], className, showLogo = false }: TopbarPr
                         </Button>
                     </Drawer.Trigger>
                     <Drawer.Portal>
-                        <Drawer.Overlay className="fixed inset-0 z-10 bg-black/40" />
-                        <Drawer.Content className="fixed start-2 top-2 bottom-2 z-10 outline-none">
+                        <Drawer.Overlay className="fixed inset-0 z-99 bg-black/40" />
+                        <Drawer.Content className="fixed start-2 top-2 bottom-2 z-100 outline-none">
                             <Drawer.Title hidden>Hidden</Drawer.Title>
                             <Sidebar items={items} className="bg-background w-64 rounded" />
                         </Drawer.Content>
@@ -80,7 +80,7 @@ export const Topbar = ({ menuItems = [], className, showLogo = false }: TopbarPr
                         className={cn("text-foreground/80 hover:text-foreground text-[15px] transition-all", {
                             "text-foreground font-medium": pathname.includes("docs"),
                         })}
-                        href={routes.docs.components.home}>
+                        href={routes.docs.components.base}>
                         Components
                     </Link>
                     <Link
@@ -100,21 +100,21 @@ export const Topbar = ({ menuItems = [], className, showLogo = false }: TopbarPr
             </div>
             <div className="flex items-center">
                 <Button variant={"ghost"} size="icon" asChild aria-label="Github">
-                    <Link href={routes.externalLinks.twitter} target="_blank">
+                    <Link href={routes.external.twitter} target="_blank">
                         <TwitterIcon className="!size-4" />
                     </Link>
                 </Button>
                 <Button variant={"ghost"} size="icon" asChild aria-label="Github">
-                    <Link href={routes.externalLinks.discord} target="_blank">
+                    <Link href={routes.external.discord} target="_blank">
                         <DiscordIcon className="!size-5" />
                     </Link>
                 </Button>
                 <Button variant={"ghost"} size="icon" asChild aria-label="Github">
-                    <Link href={routes.externalLinks.github} target="_blank">
+                    <Link href={routes.external.github} target="_blank">
                         <GithubIcon className="!size-4.5" />
                     </Link>
                 </Button>
-
+                <hr className="mx-1 h-6 border-e border-dashed" />
                 <ThemeModeToggle />
             </div>
         </div>

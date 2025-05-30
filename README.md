@@ -1,5 +1,3 @@
-# PaceUI
-
 Animated **components** and design **blocks** crafted for smooth interaction and rich detail.
 Copy, customise, and create without the extra setup.
 

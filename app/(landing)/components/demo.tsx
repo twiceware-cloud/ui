@@ -78,7 +78,7 @@ export const Demo = () => {
             </div>
             <div className="mt-4 flex items-center justify-center sm:mt-8 xl:mt-12">
                 <Button size="lg" asChild variant="outline">
-                    <Link href={routes.docs.components.home}>
+                    <Link href={routes.docs.components.base}>
                         <span className="text-lg tracking-tight">Explore components</span>
                         <ArrowRightIcon />
                     </Link>

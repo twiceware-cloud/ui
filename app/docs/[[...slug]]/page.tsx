@@ -1,4 +1,4 @@
-import { Link2Icon, PencilIcon } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon, Link2Icon, PencilIcon } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -9,6 +9,7 @@ import { MDXContent } from "@/components/docs/mdx/mdx-content";
 import { DocsPagination } from "@/components/docs/mdx/pagination";
 import { TableOfContent } from "@/components/docs/mdx/toc";
 import { BreadcrumbItem, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
 import { createPaginationPair, routes } from "@/lib/docs";
 
 interface PageProps {
@@ -41,10 +42,11 @@ export default async function Page(props: PageProps) {
         items: docsSidebarNavItems,
         activePath: url,
         pagerPair: { prev: page.pagerPrev, next: page.pagerNext },
+        defaultPagerPair: { next: { title: "Blocks", href: routes.blocks.base } },
     });
 
     return (
-        <div className="flex md:gap-4 xl:gap-8 2xl:gap-16">
+        <div className="flex gap-4 max-xl:px-6 max-sm:px-4 xl:gap-8 xl:ps-8 2xl:gap-16 2xl:ps-12">
             <div className="w-full min-w-0 grow">
                 <BreadcrumbList className="sm:gap-1.5">
                     <BreadcrumbItem>
@@ -57,7 +59,25 @@ export default async function Page(props: PageProps) {
                         <BreadcrumbPage className="text-foreground">{page.title}</BreadcrumbPage>
                     </BreadcrumbItem>
                 </BreadcrumbList>
-                <h1 className="mt-2 text-xl font-semibold sm:mt-3 sm:text-2xl xl:text-3xl">{page.title}</h1>
+                <div className="mt-2 flex items-center justify-between">
+                    <h1 className="text-xl font-semibold sm:mt-3 sm:text-2xl xl:text-3xl">{page.title}</h1>
+                    <div className="flex items-center gap-2">
+                        {pager.prev != null && (
+                            <Button asChild size="icon" variant="outline" className="shadow-none">
+                                <Link href={pager.prev.href}>
+                                    <ChevronLeftIcon />
+                                </Link>
+                            </Button>
+                        )}
+                        {pager.next != null && (
+                            <Button asChild size="icon" variant="outline" className="shadow-none">
+                                <Link href={pager.next.href}>
+                                    <ChevronRightIcon />
+                                </Link>
+                            </Button>
+                        )}
+                    </div>
+                </div>
                 <h2 className="text-muted-foreground max-sm:text-sm">{page.description}</h2>
                 {page.links && (
                     <div className="mt-4 flex gap-2">
@@ -77,11 +97,11 @@ export default async function Page(props: PageProps) {
                         <MDXContent code={page.code} />
                     </div>
                 )}
-                <div className="my-12">
+                <div className="mt-12">
                     <DocsPagination prev={pager.prev} next={pager.next} />
                 </div>
             </div>
-            <div className="sticky top-24 hidden h-full w-52 min-w-52 xl:block">
+            <div className="sticky top-28 hidden h-full w-48 min-w-48 xl:block">
                 <TableOfContent entries={page.toc} />
                 <div className="mt-6 text-sm">
                     <p className="font-medium">Contribute</p>

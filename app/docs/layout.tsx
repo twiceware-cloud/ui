@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </div>
                 </div>
 
-                <div className="mt-4 max-xl:px-6 max-sm:px-4 xl:mt-8 xl:ps-8 2xl:ps-12">{children}</div>
+                <div className="my-4 xl:my-8 2xl:my-12">{children}</div>
                 <div className="border-t border-dashed">
                     <Footer className="pe-4 max-xl:px-6 max-sm:px-4 xl:ps-8 2xl:ps-12" />
                 </div>
