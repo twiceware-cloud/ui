@@ -1,12 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { FlipReveal, FlipRevealItem } from "@/components/gsap/flip-reveal";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
+const categories = ["shirt", "goggles", "shoes"];
+
 export const FlipRevealDemo = () => {
     const [key, setKey] = useState("shirt");
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (index == -1) {
+                clearInterval(interval);
+            } else {
+                setKey(categories[(index + 1) % 3]);
+                setIndex(index + 1);
+            }
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [index]);
+
+    const onValueChange = (e: string) => {
+        if (e !== "") {
+            setIndex(-1);
+            setKey(e);
+        }
+    };
 
     return (
         <div className="flex min-h-44 flex-col items-center gap-8">
@@ -16,7 +38,7 @@ export const FlipRevealDemo = () => {
                 className="bg-background flex gap-0.5 rounded-md border p-1"
                 value={key}
                 orientation="horizontal"
-                onValueChange={(e) => e != "" && setKey(e)}>
+                onValueChange={onValueChange}>
                 <ToggleGroupItem value="shirt" className="w-full cursor-pointer sm:px-4">
                     Shirt
                 </ToggleGroupItem>
