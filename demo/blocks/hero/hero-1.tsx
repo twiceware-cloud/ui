@@ -25,7 +25,7 @@ const Hero1 = () => {
                         momentum across all your important projects.
                     </p>
                     <div className="mt-auto flex flex-wrap items-center gap-3 pt-4 sm:pt-6">
-                        <TextFallButton className="bg-primary text-primary-foreground cursor-pointer rounded-full py-2 ps-4 pe-5 font-medium">
+                        <TextFallButton className="bg-primary text-primary-foreground cursor-pointer overflow-hidden rounded-full py-2 ps-4 pe-5 font-medium">
                             Start Free Trial
                         </TextFallButton>
                         <SpringButton

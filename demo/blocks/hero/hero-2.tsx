@@ -30,7 +30,7 @@ const Hero2 = () => {
                             <RocketIcon className="size-4.5" />
                             How It Works
                         </SpringButton>
-                        <TextFallButton className="bg-primary text-primary-foreground cursor-pointer rounded-full py-2 ps-4 pe-5 font-medium">
+                        <TextFallButton className="bg-primary text-primary-foreground cursor-pointer overflow-hidden rounded-full py-2 ps-4 pe-5 font-medium">
                             Explore Now
                         </TextFallButton>
                     </div>
