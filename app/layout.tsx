@@ -13,21 +13,52 @@ export const metadata: Metadata = {
         template: "%s | PaceUI",
         default: "PaceUI – Animated Components and Blocks for React Ecosystem",
     },
+    metadataBase: new URL("https://paceui.com/"),
     description:
         "Animated components and building blocks built for smooth interaction and  rich detail. Copy, customise, and create without the extra setup.",
-
     keywords: [
-        "tailwind",
-        "tailwindcss",
+        "Tailwind CSS",
         "shadcn",
-        "next.js",
-        "react",
+        "Next.js",
+        "React",
         "animations",
-        "web design",
         "copy-paste components",
         "gsap",
         "gsap react",
     ],
+    authors: [
+        {
+            name: "Denish Navadiya",
+            url: "https://withden.dev/",
+        },
+    ],
+    creator: "withden",
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: "https://paceui.com",
+        title: "PaceUI – Animated Components and Blocks for React Ecosystem",
+        description:
+            "Animated components and building blocks built for smooth interaction and  rich detail. Copy, customise, and create without the extra setup.",
+        siteName: "PaceUI",
+        images: [
+            {
+                url: "https://paceui.com/images/og.jpg",
+                alt: "PaceUI",
+            },
+            {
+                url: "https://paceui.com/images/logo.png",
+                alt: "PaceUI Logo",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "PaceUI – Animated Components and Blocks for React Ecosystem",
+        description:
+            "Animated components and building blocks built for smooth interaction and  rich detail. Copy, customise, and create without the extra setup.",
+        creator: "@paceui_",
+    },
     icons: {
         icon: [
             {
@@ -49,25 +80,6 @@ export const metadata: Metadata = {
                 media: "(prefers-color-scheme: dark)",
             },
         ],
-    },
-    openGraph: {
-        title: "PaceUI – Animated Components and Blocks for React Ecosystem",
-        description:
-            "Animated components and building blocks built for smooth interaction and  rich detail. Copy, customise, and create without the extra setup.",
-        url: "https://paceui.com",
-        siteName: "PaceUI",
-        images: [
-            {
-                url: "https://paceui.com/images/og.jpg",
-                alt: "PaceUI",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "PaceUI – Animated Components and Blocks for React Ecosystem",
-        description:
-            "Animated components and building blocks built for smooth interaction and  rich detail. Copy, customise, and create without the extra setup.",
     },
     alternates: {
         canonical: "https://paceui.com",
