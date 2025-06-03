@@ -1,7 +1,6 @@
-import { ArrowRightIcon, ChevronRightIcon, RocketIcon, ShapesIcon } from "lucide-react";
+import { ArrowRightIcon, BlocksIcon, ChevronRightIcon, RocketIcon, ShapesIcon } from "lucide-react";
 import Link from "next/link";
 
-import { GithubIcon } from "@/components/docs/icon";
 import { RevealText } from "@/components/gsap/reveal-text";
 import { SpringButton } from "@/components/gsap/spring-button";
 import { TextFallButton } from "@/components/gsap/text-fall-button";
@@ -46,16 +45,16 @@ export const Hero = () => {
                 </RevealText>
                 <div className="mt-6 flex flex-wrap justify-center gap-4 max-sm:items-center sm:mt-8 xl:mt-12 xl:gap-6 2xl:mt-16">
                     <Button size="lg" asChild className="shadow-primary/20 h-11 gap-2.5 px-6 shadow-xl">
-                        <Link href={routes.docs.components.base}>
-                            <ShapesIcon className="!size-4.5" />
-                            Components
+                        <Link href={routes.blocks.base}>
+                            <BlocksIcon className="!size-5" />
+                            Building Blocks
                             <ChevronRightIcon />
                         </Link>
                     </Button>
-                    <Button size="lg" variant="outline" asChild className="h-11 gap-2.5 px-6 shadow-xs">
-                        <Link href={routes.external.github} target="_blank">
-                            <GithubIcon className="!size-4.5" />
-                            Star on GitHub
+                    <Button size="lg" variant="ghost" asChild className="h-11 gap-2.5 px-6">
+                        <Link href={routes.docs.components.base}>
+                            <ShapesIcon className="!size-4.5" />
+                            Components
                         </Link>
                     </Button>
                 </div>
