@@ -1,7 +1,11 @@
-"use client";
+'use client'
 
-import { SquashText } from "@/components/gsap/squash-text";
+import { SquashText } from '@/components/gsap/squash-text'
 
 export const SquashDemo = () => {
-    return <SquashText className="text-secondary text-5xl font-semibold tracking-tight">Push the Pixels</SquashText>;
-};
+  return (
+    <SquashText className="font-semibold text-5xl text-secondary tracking-tight">
+      Push the Pixels
+    </SquashText>
+  )
+}
