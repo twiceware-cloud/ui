@@ -1,20 +1,21 @@
-Animated **components** and design **blocks** crafted for smooth interaction and rich detail.
-Copy, customise, and create without the extra setup.
+shadcn/ui compatible react aria components, optimized for Laravel and Inertia – that you can copy and paste into your apps. 
+Accessible. Customizable. Open Source.
 
-![hero](/public/images/og.jpg)
 
 ## Getting Started
 
-Explore the full documentation at [paceui.com](https://paceui.com/) and start building faster.
+Explore the full documentation at [ui.twiceware.cloud](https://ui.twiceware.cloud/) and start building faster.
 
-### Quick Links
+## Credits
 
-- [Animated Components](https://paceui.com/docs/components)  
-  Reusable UI elements with built-in interactivity
-- [Design Blocks](https://paceui.com/blocks)  
-  Pre-built layouts for pages, sections, and flows
+- Animations: [GSAP](https://gsap.com/)
+- Icon: [HugeIcons](https://hugeicons.com?via=daspwork)
+- CLI: [Shadcn](https://ui.shadcn.com/docs/cli)
+- Code Highlight: [Shiki](https://shiki.style/)
+- Content Management: [Velite](https://velite.js.org/)
 
-More animations, interactive sections, and design tools are coming soon.
+- Documentation site: [PaceUI](https://www.paceui.com/)
+- Inspired by [JollyUI](https://www.jollyui.dev)
 
 ## License
 
