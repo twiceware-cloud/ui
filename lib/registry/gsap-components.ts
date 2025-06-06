@@ -9,7 +9,7 @@ export const gsapComponentRegistries: RegistryItem[] = [
       {
         path: 'twc-ui/tooltip.tsx',
         type: 'registry:ui',
-        target: 'components/twc-ui/tooltip.tsx'
+        target: 'components/ui/twc-ui/tooltip.tsx'
       }
     ]
   },
@@ -22,7 +22,7 @@ export const gsapComponentRegistries: RegistryItem[] = [
       {
         path: 'twc-ui/base-button.tsx',
         type: 'registry:ui',
-        target: 'components/twc-ui/base-button.tsx'
+        target: 'components/ui/twc-ui/base-button.tsx'
       }
     ]
   },
@@ -38,7 +38,7 @@ export const gsapComponentRegistries: RegistryItem[] = [
       {
         path: 'twc-ui/button.tsx',
         type: 'registry:ui',
-        target: 'components/twc-ui/button.tsx'
+        target: 'components/ui/twc-ui/button.tsx'
       }
     ]
   }
