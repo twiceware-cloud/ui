@@ -1,7 +1,7 @@
 'use client'
 
 import { CheckIcon, ClipboardIcon } from 'lucide-react'
-import { useEffect, useMemo, useState } from 'react'
+import { type JSX, useEffect, useMemo, useState } from 'react'
 import { codeToHtml } from 'shiki'
 
 import { Button } from '@/components/ui/button'
@@ -13,6 +13,8 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { copyToClipboard } from '@/lib/docs'
 import { cn } from '@/lib/utils'
+import { HugeiconsIcon } from '@hugeicons/react'
+import { ComputerTerminal01Icon } from '@hugeicons/core-free-icons'
 
 export type PackageManager = 'npm' | 'yarn' | 'bun' | 'pnpm'
 
@@ -44,20 +46,25 @@ export const getCommandAsPackageManager = (command: string, manager: PackageMana
     .replaceAll(createCommands.npm, createCommands[manager])
 }
 
-export const InstallationCommand = ({
-  command: rawCommand = '',
-  className,
-  wrapperClassname
-}: {
+export interface InstallationCommandProps {
   command: string
+  commandType?: 'execute' | 'install' | 'create'
+  packageManager?: PackageManager
   className?: string
   wrapperClassname?: string
-}) => {
+}
+
+export const InstallationCommand = ({
+  command: rawCommand,
+  packageManager = 'pnpm',
+  className = '',
+  wrapperClassname = ''
+}: InstallationCommandProps): JSX.Element => {
   const [code, setCode] = useState<string>('')
   const [hasCopied, setHasCopied] = useState(false)
 
   const command = useMemo(() => {
-    return rawCommand.replace('~website/', 'https://paceui.com/')
+    return rawCommand.replace('~website/', 'https://ui.twiceware.cloud/')
   }, [rawCommand])
 
   const copy = async (manager: PackageManager) => {
@@ -78,6 +85,10 @@ export const InstallationCommand = ({
 
   return (
     <div className={cn('relative mt-4 mb-3', wrapperClassname)}>
+      <div className="flex items-center gap-2">
+        <HugeiconsIcon icon={ComputerTerminal01Icon} />
+      </div>
+
       <div
         className={cn('select-all overflow-hidden rounded text-sm [&>.shiki]:p-4', className)}
         dangerouslySetInnerHTML={{ __html: code }}

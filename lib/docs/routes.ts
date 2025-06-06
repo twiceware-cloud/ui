@@ -12,7 +12,7 @@ export const routes = {
     base: '/blocks'
   },
   external: {
-    github: 'https://github.com/dspangenberg/ui',
+    github: 'https://github.com/twiceware-cloud/ui',
     bluesky: 'https://bsky.app/profile/ui.twiceware.cloud'
   }
 }
