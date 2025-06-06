@@ -1,20 +1,22 @@
+'use client'
+
 import {
   Toolbar as AriaToolbar,
   composeRenderProps,
-  type ToolbarProps,
-} from "react-aria-components"
+  type ToolbarProps
+} from 'react-aria-components'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 export function Toolbar(props: ToolbarProps) {
   return (
     <AriaToolbar
       {...props}
-      className={composeRenderProps(props.className, (className) =>
+      className={composeRenderProps(props.className, className =>
         cn(
-          "flex gap-1 ",
+          'flex gap-1 ',
           /* Orientation */
-          "data-[orientation=vertical]:flex-col",
+          'data-[orientation=vertical]:flex-col',
           className
         )
       )}

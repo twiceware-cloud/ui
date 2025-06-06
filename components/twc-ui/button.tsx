@@ -1,5 +1,7 @@
+'use client'
+
 import { Tooltip, TooltipTrigger } from './tooltip'
-import type { TooltipProps} from 'react-aria-components'
+import type { TooltipProps } from 'react-aria-components'
 import { BaseButton, buttonVariants, type BaseButtonProps } from './base-button'
 import type { JSX } from 'react'
 
@@ -21,7 +23,6 @@ export const Button = ({
   children,
   ...props
 }: ButtonProps): JSX.Element => {
-
   const ariaLabel = title || tooltip
 
   if (variant === 'toolbar-default') {
@@ -42,16 +43,32 @@ export const Button = ({
   if (tooltip) {
     return (
       <TooltipTrigger>
-        <BaseButton size={size} title={title} form={form} variant={variant} type={type} aria-label={ariaLabel} {...props}>
-            {title || children}
+        <BaseButton
+          size={size}
+          title={title}
+          form={form}
+          variant={variant}
+          type={type}
+          aria-label={ariaLabel}
+          {...props}
+        >
+          {title || children}
         </BaseButton>
-        <Tooltip  placement={tooltipPlacement}>{tooltip}</Tooltip>
+        <Tooltip placement={tooltipPlacement}>{tooltip}</Tooltip>
       </TooltipTrigger>
     )
   }
 
   return (
-    <BaseButton size={size} title={title} form={form} type={type} variant={variant} aria-label={ariaLabel} {...props}>
+    <BaseButton
+      size={size}
+      title={title}
+      form={form}
+      type={type}
+      variant={variant}
+      aria-label={ariaLabel}
+      {...props}
+    >
       {title || children}
     </BaseButton>
   )

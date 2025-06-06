@@ -83,7 +83,7 @@ export default async function Page(props: PageProps) {
             )}
           </div>
         </div>
-        <h2 className='py-2 font-medium text-foreground'>{page.description}</h2>
+        <h2 className="py-2 font-medium text-foreground">{page.description}</h2>
         {page.links && (
           <div className="mt-4 flex gap-2">
             {page.links.api && (

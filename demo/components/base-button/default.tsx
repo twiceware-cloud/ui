@@ -1,5 +1,5 @@
-import { Button } from "@/components/twc-ui/button";
+import { Button } from '@/components/twc-ui/button'
 
 export const Demo = () => {
-    return <Button>Button</Button>
+  return <Button>Button</Button>
 }

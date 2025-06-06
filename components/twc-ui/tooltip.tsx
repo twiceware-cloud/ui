@@ -1,3 +1,5 @@
+'use client'
+
 import type React from 'react'
 import {
   composeRenderProps,
@@ -9,7 +11,7 @@ import {
 import { tv } from 'tailwind-variants'
 
 export interface TooltipProps extends Omit<AriaTooltipProps, 'children'> {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const styles = tv({
@@ -24,16 +26,17 @@ const styles = tv({
   }
 })
 
-export function Tooltip ({
-  children,
-  ...props
-}: TooltipProps) {
+export function Tooltip({ children, ...props }: TooltipProps) {
   return (
-    <AriaTooltip {...props} offset={8}
-       className={composeRenderProps(props.className, (className, renderProps) => styles({
-         ...renderProps,
-         className
-       }))}
+    <AriaTooltip
+      {...props}
+      offset={8}
+      className={composeRenderProps(props.className, (className, renderProps) =>
+        styles({
+          ...renderProps,
+          className
+        })
+      )}
     >
       <OverlayArrow>
         <svg
@@ -41,7 +44,7 @@ export function Tooltip ({
           height={8}
           data-placement={props.placement}
           viewBox="0 0 8 8"
-          className='data-[placement=left]:-rotate-90 fill-bg-foreground stroke-primary data-[placement=bottom]:rotate-180 data-[placement=right]:rotate-90 forced-colors:fill-[Canvas]'
+          className="data-[placement=left]:-rotate-90 fill-bg-foreground stroke-primary data-[placement=bottom]:rotate-180 data-[placement=right]:rotate-90 forced-colors:fill-[Canvas]"
         >
           <title>Tooltip-Arrow</title>
           <path d="M0 0 L4 4 L8 0" />

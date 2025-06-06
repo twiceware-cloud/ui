@@ -1,5 +1,4 @@
 import { Footer, Topbar } from '@/components/docs/layouts'
-import { Newsletter } from '@/components/docs/newsletter'
 
 import { Demo } from './components/demo'
 import { Feature } from './components/feature'

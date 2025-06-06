@@ -24,9 +24,7 @@ export const Hero = () => {
           <p>Beta</p>
         </Link>
         <div className="mt-4 font-[580] text-2xl leading-[1.15] tracking-tight sm:text-4xl md:text-5xl 2xl:text-6xl">
-          <p>
-            Accessible + Customizable
-          </p>
+          <p>Accessible + Customizable</p>
         </div>
         <RevealText
           type="lines"
