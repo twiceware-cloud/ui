@@ -4,11 +4,13 @@ export const gsapComponentRegistries: RegistryItem[] = [
   {
     name: 'tooltip',
     type: 'registry:ui',
+    $schema: 'https://ui.shadcn.com/schema/registry.json',
     dependencies: ['react-aria-components'],
     files: [
       {
         path: 'twc-ui/tooltip.tsx',
-        type: 'registry:ui'
+        type: 'registry:ui',
+        target: 'components/ui/twc-ui/tooltip.tsx'
       }
     ]
   },
@@ -20,7 +22,8 @@ export const gsapComponentRegistries: RegistryItem[] = [
     files: [
       {
         path: 'twc-ui/base-button.tsx',
-        type: 'registry:ui'
+        type: 'registry:ui',
+        target: 'components/ui/twc-ui/base-button.tsx'
       }
     ]
   },
@@ -35,7 +38,8 @@ export const gsapComponentRegistries: RegistryItem[] = [
     files: [
       {
         path: 'twc-ui/button.tsx',
-        type: 'registry:ui'
+        type: 'registry:ui',
+        target: 'components/ui/twc-ui/button.tsx'
       }
     ]
   }
