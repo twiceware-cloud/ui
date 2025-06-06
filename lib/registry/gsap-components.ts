@@ -20,7 +20,7 @@ export const gsapComponentRegistries: RegistryItem[] = [
     registryDependencies: [],
     files: [
       {
-        path: 'twc-ui/button.tsx',
+        path: 'twc-ui/base-button.tsx',
         type: 'registry:ui',
         target: '~/components/twc-ui/base-button.tsx'
       }
