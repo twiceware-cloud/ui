@@ -14,7 +14,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:registry": "tsx lib/registry/script.ts && pnpm format:write",
-    "start": "next start",
+    "start": "next start -p 3001",
     "lint": "pnpm  dlx @biomejs/biome lint .",
     "format:check": "pnpm  dlx @biomejs/biome format .",
     "format:write": "pnpm  dlx @biomejs/biome format --write ."
