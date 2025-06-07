@@ -1,0 +1,90 @@
+---
+slug: components-calendar
+title: Calendar
+description: A calendar component.
+registry: add "~website/r/twc-ui/calendar"
+links:
+    api: https://react-spectrum.adobe.com/react-aria/Calendar.html
+---
+
+<DemoCodePreview
+    path="demo/components/calendar/default.tsx"
+    v0Link="/twc-ui/calendar"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli" className="mt-3">
+    <TabsList>
+        <TabsTrigger value="cli">CLI</TabsTrigger>
+        <TabsTrigger value="manual">Manual</TabsTrigger>
+    </TabsList>
+    <TabsContent value="cli" className="mt-4">
+        <InstallationCommand manager="pnpm" command={`npx shadcn@latest add "~website/r/twc-ui/button"`} />
+    </TabsContent>
+    <TabsContent value="manual" className="mt-4">
+        <Steps>
+            <Step>
+                Install the following dependencies
+            </Step>
+            <InstallationCommand command="npm install class-variance-authority react-aria-components @hugeicons/react @hugeicons/core-free-icons lucide-react" />
+            <Step>
+                Copy and paste the following code as 'base-button.tsx' into your project
+            </Step>
+            <CodePreview path='components/twc-ui/base-button.tsx' collapsible></CodePreview>
+            <Step>
+
+                    Copy and paste the following code as 'button.tsx' into your project
+
+                <CodePreview path='components/twc-ui/button.tsx' collapsible></CodePreview>
+            </Step>
+            <Step>
+                Update the import paths to fit your project setup
+            </Step>
+        </Steps>
+    </TabsContent>
+</Tabs>
+
+## Examples
+
+### Ghost with icon and title
+
+Set `icon` to a HugeIcon component from the [`@hugeicons/core-free-icons`](https://hugeicons.com/?via=daspwork) package.
+
+<DemoCodePreview
+    path="demo/components/base-button/icon.tsx"
+/>
+
+### With loading state
+
+Set `loading` to `true`
+
+<DemoCodePreview
+    path="demo/components/base-button/loading.tsx"
+/>
+
+### Toolbar buttons
+
+<DemoCodePreview
+    path="demo/components/base-button/toolbar.tsx"
+/>
+
+
+
+## Props
+
+### Button
+
+| Prop      | Type              | Default |
+|-----------|-------------------|---------|
+| variant   | `default` \| `secondary` \| `outline` \| `ghost`\| `destructive` \| `link` \| `toolbar` \| `toolbar-default` | `default` |
+| size   | `default` \| `sm` \| `lg` \| `icon` \| `icon-sm` \| `icon-xs` \| `auto` | `default` |
+| title   | string | ''|
+| icon   | IconSvgElement ([HugeIcons](https://hugeicons.com/?via=daspwork))| '' |
+| form   | string | ''|
+| loading | boolean | false |
+| disabled | boolean | false |
+| iconClassName | string | '' |
+| tooltip   | string | `` |
+| tooltipPlacement   | Placement | `bottom` |
+

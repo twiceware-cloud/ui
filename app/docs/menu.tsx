@@ -24,6 +24,14 @@ export const docsComponentNavItems: SidebarNavItem[] = [
     href: `${components}/base-button`
   },
   {
+    title: 'Date + Time',
+    isLabel: true
+  },
+  {
+    title: 'Calendar',
+    href: `${components}/calendar`
+  },
+  {
     title: 'Navigation',
     isLabel: true
   },
