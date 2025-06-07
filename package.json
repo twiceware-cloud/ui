@@ -86,8 +86,6 @@
     "velite": "^0.2.4"
   },
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome"
-    ]
+    "onlyBuiltDependencies": ["@biomejs/biome"]
   }
 }
